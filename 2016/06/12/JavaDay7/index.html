@@ -49,26 +49,31 @@
 
 
 
-<meta name="description" content="环境搭建
-HelloWorld
-基本语法">
+<meta name="description" content="回顾
+继承
+重写
+关键字（ super final static）
+多态">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android从自学到放弃01">
-<meta property="og:url" content="http://yoursite.com/2016/06/06/JavaDay1/index.html">
+<meta property="og:title" content="Android从自学到放弃07">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/JavaDay7/index.html">
 <meta property="og:site_name" content="coder_qi">
-<meta property="og:description" content="环境搭建
-HelloWorld
-基本语法">
-<meta property="og:image" content="http://i.imgur.com/CmlH1wV.jpg">
-<meta property="og:image" content="http://i.imgur.com/RlW8PnS.jpg">
-<meta property="og:image" content="http://i.imgur.com/ULMK1bv.jpg">
-<meta property="og:updated_time" content="2016-06-12T02:06:03.000Z">
+<meta property="og:description" content="回顾
+继承
+重写
+关键字（ super final static）
+多态">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/005KqbSEgw1f4sjf6kkm1j30gb05u0tg.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/005KqbSEgw1f4sjfr2s3qj30g0038jrw.jpg">
+<meta property="og:updated_time" content="2016-06-12T08:56:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android从自学到放弃01">
-<meta name="twitter:description" content="环境搭建
-HelloWorld
-基本语法">
-<meta name="twitter:image" content="http://i.imgur.com/CmlH1wV.jpg">
+<meta name="twitter:title" content="Android从自学到放弃07">
+<meta name="twitter:description" content="回顾
+继承
+重写
+关键字（ super final static）
+多态">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/005KqbSEgw1f4sjf6kkm1j30gb05u0tg.jpg">
 
 
 
@@ -80,7 +85,7 @@ HelloWorld
   };
 </script>
 
-  <title> Android从自学到放弃01 | coder_qi </title>
+  <title> Android从自学到放弃07 | coder_qi </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -219,7 +224,7 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
             
             
               
-                Android从自学到放弃01
+                Android从自学到放弃07
               
             
           </h1>
@@ -228,8 +233,8 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
         <div class="post-meta">
           <span class="post-time">
             Veröffentlicht am
-            <time itemprop="dateCreated" datetime="2016-06-06T10:13:56+08:00" content="2016-06-06">
-              2016-06-06
+            <time itemprop="dateCreated" datetime="2016-06-12T16:43:56+08:00" content="2016-06-12">
+              2016-06-12
             </time>
           </span>
 
@@ -254,8 +259,8 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/06/JavaDay1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/06/JavaDay1/" itemprop="commentsCount"></span>
+                <a href="/2016/06/12/JavaDay7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/JavaDay7/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,81 +280,220 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 
       
         <span itemprop="articleBody"><ul>
-<li>环境搭建</li>
-<li>HelloWorld</li>
-<li>基本语法<a id="more"></a>
+<li>回顾</li>
+<li>继承</li>
+<li>重写</li>
+<li>关键字（ super final static）</li>
+<li>多态</li>
+</ul>
+<a id="more"></a>
+<h2 id="继承-面向对象编程三大特征之二"><a href="#继承-面向对象编程三大特征之二" class="headerlink" title="继承  面向对象编程三大特征之二"></a>继承  面向对象编程三大特征之二</h2><ul>
+<li><b>引子</b><blockquote>
+<p>现实生活中的继承，例如:  玉如意 祖父 –&gt;父亲 –&gt;自己 –&gt;儿子 <br><br>程序中体现？</p>
+</blockquote>
 </li>
 </ul>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><p>Java是一种编程语言，具有免费，开源，扩平台等特点，有由Sun Microsystems,Inc.开发，现已被Oracle(甲骨文)公司收购。 Oracle网址是www.oracle.com 。<br>随着WebKit而兴起的,因其一次编译到处运行的特性而发展起来.为什么是一次编译到处运行呢?因为JVM</p>
-<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ul>
-<li><strong>JVM</strong>(Java Virtual Machine), Java虚拟机，就是一种用于计算设备规范，根据这个规范，能够在物理机器上模拟出来一台用于运行Java程序机器。</li>
-<li><strong>JRE</strong>(Java Runtime Enviroment), Java的运行时环境，是面向Java程序的使用者的</li>
-<li><strong>JDK</strong>(Java Development Kit), Java 语言的软件开发工具包，提供了开发用到的工具和运行时环境</li>
-</ul>
-<h4 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h4><ul>
-<li><strong>JavaSE</strong>(Java Standard Edition),标准版，是我们通常用的一个版本，用于学习和开发桌面应用， 例如：JavaSE版本的星际争霸 （下载地址：<a href="http://download.csdn.net/detail/obuyiseng/9467877）" target="_blank" rel="external">http://download.csdn.net/detail/obuyiseng/9467877）</a></li>
-<li><strong>JavaEE</strong>(Java Enterprise Edition),企业版，使用这种JDK开发企业级应用程序， 比如：金融系统、电信系统、军工系统等</li>
-<li><strong>JavaME</strong>(Java Micro Edition)，主要用于移动设备、嵌入式设备上的java应用程序，应用比较广的是曾经的Nokia系列手机上，例如：Java版QQ等</li>
-</ul>
-<h4 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h4><p>现在的版本 1.0 1.1 1.5 jdk 6.0</p>
 <ul>
-<li>配置环境<br>配置JAVA_HOME 和PATH<br>MAC下不需要配置环境</li>
+<li><p><b>概念</b></p>
+<blockquote>
+<p>继承是从已有的类中派生出新的类<br><br>新类拥有已有类的特征和行为，并且可以拓展<br><br>已有的类称为父类，新类称为子类</p>
+</blockquote>
+</li>
+<li><p><b>语法</b></p>
+<blockquote>
+<p>继承出现后,需要借助 extends关键字  写法如下：<br><br>   public class Dog extends Animal{  }<br><br>  Dog类称之为子类<br><br>  Animal类称为父类,基类（基础的类）</p>
+</blockquote>
+</li>
 </ul>
-<p>成功标志 javac java -version</p>
-<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><p>开发先采用命令行的方式<br>window + R<br>notepad<br>mspaint<br>calc<br>命令行的简单解释<br>cd<br>dir<br>mkdir<br>rename<br>写文件 cd. &gt;a.txt<br>编辑文件 notepad a.txt</p>
-<ul>
-<li>1）创建HelloWorld文件， 编写代码</li>
-<li>2）保存后重命名为.java文件</li>
-<li>3）编写时需要注意：名字，大小写，符号的类型必须是英文</li>
-<li>4）运行java文件:先javac （compiler）、  后java，解释为什么要这么执行（把不认识的变成自己认识的–编译，然后再进行操作–执行）</li>
-</ul>
-<p>命令解释:<br>javac<br>java</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>三种注释<br>//单行注释<br>/<em><br>多行注释
-</em>/</p>
-<p>/**</p>
-<ul>
-<li>@文档注释<br>*/</li>
-</ul>
-<h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><p>二进制简单介绍</p>
-<ul>
-<li><img src="http://i.imgur.com/CmlH1wV.jpg" alt=""></li>
-<li><img src="http://i.imgur.com/RlW8PnS.jpg" alt=""></li>
-<li>1）四类八种：<pre><code>（整数型）byte、short、int、long
-（浮点型）float、double
-（字符型）char
-（逻辑型）boolean
-</code></pre></li>
-<li>2）基本数据类型的存储范围</li>
-<li>3）基本数据类型的分类原因，因为存储空间有限，避免浪费、空间不足<br> （例如：水和水杯问题）</li>
-</ul>
-<h4 id="变量与表达式"><a href="#变量与表达式" class="headerlink" title="变量与表达式"></a>变量与表达式</h4><ul>
-<li>0） int num = 4；  num = 9； syso(num);</li>
-<li>1）变量的意义  <pre><code>变量代表一块存储区域，存储区域的值可以改变 例如：客房,标准间、大房间、套间等等
-</code></pre></li>
-<li>2）变量的基本组成单元  <pre><code>&lt;b&gt;三要素：&lt;/b&gt; 变量类型(分配空间) &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp;   变量名（方便操作）&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  = &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 初始值（数据）
-</code></pre></li>
-<li>3）变量名的命名规则<pre><code>* a.只能由字母、数字、下划线及美元符组成并且不能以数字开头
-* b.不能重复定义已经定义过的变量名
-* c.不能使用系统保留字
-* d.见名知意
-</code></pre></li>
-<li>4）表达式就是由变量和运算符组成的</li>
-<li>5）基本运算符的认知：+、-、*、/、%、=</li>
-<li>6）复合运算符的认知：++、–、+=、-=、*=、/=、%=</li>
-</ul>
-<h4 id="包的概念和使用"><a href="#包的概念和使用" class="headerlink" title="包的概念和使用"></a>包的概念和使用</h4><p>package com.lanou.项目名或模块名<br>import 包名.文件名；<br>       包名.*;</p>
-<font color="red">参考 《java版星际源码》</font>
+<blockquote>
+<p>子类中就拥有了父类中所有的属性和方法, 但是构造器除外<br><br>    存在继承关系的时候，如果本类中没有的时候 就可以去父类中找</p>
+</blockquote>
+<pre><code>父类中private 修饰的属性和方法，子类 具有拥有权 而没有使用权 
+</code></pre><ul>
+<li><b>示例：</b> </li>
+<li><p>玉如意问题、动物问题</p>
+<pre><code>public class Extends {        
+    public static void main(String[] args) {
 
-<h4 id="java中52个关键字"><a href="#java中52个关键字" class="headerlink" title="java中52个关键字"></a>java中52个关键字</h4><p><img src="http://i.imgur.com/ULMK1bv.jpg" alt=""></p>
-<p>#总结</p>
-<hr>
+        Son son = new Son();
+        System.out.println(&quot;传家宝是: &quot;+  son.heirloom);
+        son.skill();
+        son.business();
+    }
+}
+</code></pre></li>
+</ul>
+<pre><code>class Grandpa{
+    public String heirloom = &quot;玉如意&quot;;
+    public void skill()
+    {
+        System.out.println(&quot;打猎&quot;);
+    }
+}
+
+class Parent extends Grandpa{
+    public void business()
+    {
+        System.out.println(&quot;经商&quot;);
+    }
+}
+
+class Son extends Parent{
+}
+</code></pre><ul>
+<li><p><b>好处：</b></p>
+<blockquote>
+<p>避免了对多个类相同特征行为进行描述 <br><br>大大简化了代码，降低开发周期</p>
+</blockquote>
+</li>
+<li><p><b>Java继承特点：</b></p>
+</li>
+<li><b>1. java是单继承  可以多层继承  不可以多继承</b><br><br>  a、单继承    <br><pre><code>class  A extends B {}    
+</code></pre>  b、 多层继承    <br><pre><code>class B extends C{  }&lt;br /&gt;
+ class  A extends B {}
+</code></pre></li>
+</ul>
 <ul>
-<li>环境搭建</li>
-<li>HelloWorld</li>
-<li>基本数据类型</li>
-<li>变量</li>
-<li>+号的作用： 加法运算、字符串连接符号</li>
-<li>++、–</li>
+<li><b>2. Object类 就java所有类的基类</b> </li>
+</ul>
+<h2 id="重写-override"><a href="#重写-override" class="headerlink" title="重写(override)"></a>重写(override)</h2><ul>
+<li><p><b>什么时候使用覆盖操作?</b> </p>
+<blockquote>
+<p>当对一个类进行子类的扩展时，子类需要保留父类的功能声明，<br>但是要定义子类中该功能的特有内容时，就使用重写操作完成.</p>
+</blockquote>
+<pre><code>class Phone
+{
+    void call()
+    {}
+    void show()
+    {        
+        //只显示电话号码
+        System.out.println(&quot;number&quot;);
+    }
+}
+
+class NewPhone extends Phone
+{
+    void show()
+    {
+        //还可以显示这个人的照片和名字
+        System.out.println(&quot;name&quot;);
+        System.out.println(&quot;pic&quot;);
+        super.show();
+    }
+}
+</code></pre></li>
+</ul>
+<ul>
+<li><p><b>方法重写的原则</b> </p>
+<blockquote>
+<p>重写方法必须和父类中被重写方法具有相同的方法名称、输入参数和返回值类型。<br><br>重写方法不能使用比父类中被重写方法更严格的访问权限。<br><br>重写方法不能比父类中被重写方法抛出更多的异常<br></p>
+</blockquote>
+</li>
+<li><p><b>重载跟重写之间的区别 </b><br><img src="http://ww4.sinaimg.cn/large/005KqbSEgw1f4sjf6kkm1j30gb05u0tg.jpg" alt=""></p>
+</li>
+</ul>
+<h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><pre><code>在子类构造对象时，发现，访问子类构造函数时，父类也运行了。
+为什么呢？
+原因是：在子类的构造函数中第一行有一个默认的隐式语句。 super();
+
+子类的实例化过程：子类中所有的构造函数默认都会访问父类中的空参数的构造函数。
+
+
+为什么子类实例化的时候要访问父类中的构造函数呢？
+那是因为子类继承了父类，获取到了父类中内容(属性)，所以在使用父类内容之前，
+要先看父类是如何对自己的内容进行初始化的。
+
+所以子类在构造对象时，必须访问父类中的构造函数。 
+为什么完成这个必须的动作，就在子类的构造函数中加入了super()语句。
+
+如果父类中没有定义空参数构造函数，那么子类的构造函数必须用super明确要调用
+父类中哪个构造函数。同时子类构造函数中如果使用this调用了本类构造函数时，
+那么super就没有了，因为super和this都只能定义第一行。所以只能有一个。
+但是可以保证的是，子类中肯定会有其他的构造函数访问父类的构造函数。
+
+
+注意：supre语句必须要定义在子类构造函数的第一行。因为父类的初始化动作要先完成。
+</code></pre><p><img src="http://ww3.sinaimg.cn/large/005KqbSEgw1f4sjfr2s3qj30g0038jrw.jpg" alt=""></p>
+<h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><ul>
+<li>final可以修饰类，方法，变量。</li>
+<li>final修饰的类不可以被继承。</li>
+<li>final修饰的方法不可以被覆盖。</li>
+<li>final修饰的变量是一个常量。只能被赋值一次。</li>
+<li>内部类只能访问被final修饰的局部变量。</li>
+</ul>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><ul>
+<li><p><b>static的特点：</b> </p>
+<ol>
+<li>static是一个修饰符，用于修饰成员。</li>
+<li>static修饰的成员被所有的对象所共享。</li>
+<li>static优先于对象存在，因为static的成员随着类的加载就已经存在了。 </li>
+<li>static修饰的成员多了一种调用方式，就可以直接被类名所调用 。 类名.静态成员 。</li>
+<li>static修饰的数据是共享数据，对象中的存储的是特有数据。</li>
+</ol>
+</li>
+<li><p><b>成员变量和静态变量的区别？</b></p>
+<p>   1.两个变量的生命周期不同。</p>
+<blockquote>
+<p>成员变量随着对象的创建而存在，随着对象的被回收而释放。<br><br>  静态变量随着类的加载而存在，随着类的消失而消失。</p>
+</blockquote>
+<p>   2.调用方式不同。</p>
+<blockquote>
+<p>成员变量只能被对象调用。<br><br>  静态变量可以被对象调用，还可以被类名调用。</p>
+</blockquote>
+<p>   3.别名不同。</p>
+<blockquote>
+<p>成员变量也称为实例变量。<br><br>  静态变量称为类变量。 </p>
+</blockquote>
+<p>  4.数据存储位置不同。</p>
+<blockquote>
+<p>成员变量数据存储在堆内存的对象中，所以也叫对象的特有数据.<br><br>  静态变量数据存储在方法区(共享数据区)的静态区，所以也叫对象的共享数据.</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p><b>静态使用的注意事项</b>：</p>
+<ol>
+<li>静态方法只能访问静态成员。(非静态既可以访问静态，又可以访问非静态)</li>
+<li>静态方法中不可以使用this或者super关键字。</li>
+<li>主函数是静态的。</li>
+</ol>
+</li>
+</ul>
+<p>##多态</p>
+<ul>
+<li><p>什么是多态？</p>
+<blockquote>
+<p>多态就是一种事物存在的多种形态。<br><br>举一个例子，例如H2O：在常温下为液态水，在100摄氏度以上为气态蒸汽，在0摄氏度下为固态冰。</p>
+</blockquote>
+</li>
+<li><p>多态性只的是<b>对象</b>的多态。</p>
+<pre><code>class 动物
+{}
+
+class 猫 extends 动物
+{}
+
+猫 x = new 猫();
+
+动物 x = new 猫(); //一个对象，两种形态。  
+猫这类事物即具备者猫的形态，又具备着动物的形态。
+这就是对象的多态性。 
+
+简单说：就是一个对象对应着不同类型.
+</code></pre></li>
+</ul>
+<p>*　<b>动物 x = new 猫(); //父类的引用 指向了子类的对象    </b>    </p>
+<ul>
+<li><p>多态的好处：<br>  提高了代码的扩展性和灵活性。</p>
+</li>
+<li><p>多态的前提：</p>
+<ol>
+<li>必须有关系，继承，实现。</li>
+<li>要有覆盖。</li>
+<li>父类或接口的引用指向子类对象</li>
+</ol>
+</li>
 </ul>
 </span>
       
@@ -368,13 +512,13 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/06/12/JavaDay6/" rel="next" title="Android从自学到放弃06">
+                <i class="fa fa-chevron-left"></i> Android从自学到放弃06
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/12/JavaDay2/" rel="prev" title="Android从自学到放弃02">
-                Android从自学到放弃02 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -389,10 +533,10 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/06/JavaDay1/"
-     data-title="Android从自学到放弃01"
+        <div class="ds-share flat" data-thread-key="2016/06/12/JavaDay7/"
+     data-title="Android从自学到放弃07"
      data-content=""
-     data-url="http://yoursite.com/2016/06/06/JavaDay1/">
+     data-url="http://yoursite.com/2016/06/12/JavaDay7/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -420,8 +564,8 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/06/JavaDay1/"
-           data-title="Android从自学到放弃01" data-url="http://yoursite.com/2016/06/06/JavaDay1/">
+      <div class="ds-thread" data-thread-key="2016/06/12/JavaDay7/"
+           data-title="Android从自学到放弃07" data-url="http://yoursite.com/2016/06/12/JavaDay7/">
       </div>
     
   </div>
@@ -529,7 +673,7 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java"><span class="nav-number">1.0.1.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-number">1.0.2.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平台"><span class="nav-number">1.0.3.</span> <span class="nav-text">平台</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装配置"><span class="nav-number">1.0.4.</span> <span class="nav-text">安装配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HelloWorld"><span class="nav-number">2.</span> <span class="nav-text">HelloWorld</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法"><span class="nav-number">3.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">3.0.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数据类型"><span class="nav-number">3.0.2.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量与表达式"><span class="nav-number">3.0.3.</span> <span class="nav-text">变量与表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包的概念和使用"><span class="nav-number">3.0.4.</span> <span class="nav-text">包的概念和使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java中52个关键字"><span class="nav-number">3.0.5.</span> <span class="nav-text">java中52个关键字</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承-面向对象编程三大特征之二"><span class="nav-number">1.</span> <span class="nav-text">继承  面向对象编程三大特征之二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写-override"><span class="nav-number">2.</span> <span class="nav-text">重写(override)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super"><span class="nav-number">3.</span> <span class="nav-text">super</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final"><span class="nav-number">4.</span> <span class="nav-text">final</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static"><span class="nav-number">5.</span> <span class="nav-text">static</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

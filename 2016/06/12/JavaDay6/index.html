@@ -49,26 +49,34 @@
 
 
 
-<meta name="description" content="回顾 
-表达式（关系运算符、逻辑运算符、条件运算符）
-分支语句结构（if语句，switch语句）">
+<meta name="description" content="回顾
+访问权限
+方法
+setter getter this
+构造方法
+方法的重载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android从自学到放弃02">
-<meta property="og:url" content="http://yoursite.com/2016/06/12/JavaDay2/index.html">
+<meta property="og:title" content="Android从自学到放弃06">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/JavaDay6/index.html">
 <meta property="og:site_name" content="coder_qi">
-<meta property="og:description" content="回顾 
-表达式（关系运算符、逻辑运算符、条件运算符）
-分支语句结构（if语句，switch语句）">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/005KqbSEgw1f4s9s7yo96j306i05umx9.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/005KqbSEgw1f4s8675mtxj30770690sy.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/005KqbSEgw1f4s87cyon5j308y086aaj.jpg">
-<meta property="og:updated_time" content="2016-06-12T04:00:01.000Z">
+<meta property="og:description" content="回顾
+访问权限
+方法
+setter getter this
+构造方法
+方法的重载">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/005KqbSEgw1f4sj78j9ywj30h00793yt.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005KqbSEgw1f4sj9pv2yij30ex0840ta.jpg">
+<meta property="og:updated_time" content="2016-06-12T08:56:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android从自学到放弃02">
-<meta name="twitter:description" content="回顾 
-表达式（关系运算符、逻辑运算符、条件运算符）
-分支语句结构（if语句，switch语句）">
-<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/005KqbSEgw1f4s9s7yo96j306i05umx9.jpg">
+<meta name="twitter:title" content="Android从自学到放弃06">
+<meta name="twitter:description" content="回顾
+访问权限
+方法
+setter getter this
+构造方法
+方法的重载">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/005KqbSEgw1f4sj78j9ywj30h00793yt.jpg">
 
 
 
@@ -80,7 +88,7 @@
   };
 </script>
 
-  <title> Android从自学到放弃02 | coder_qi </title>
+  <title> Android从自学到放弃06 | coder_qi </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -219,7 +227,7 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
             
             
               
-                Android从自学到放弃02
+                Android从自学到放弃06
               
             
           </h1>
@@ -228,7 +236,7 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
         <div class="post-meta">
           <span class="post-time">
             Veröffentlicht am
-            <time itemprop="dateCreated" datetime="2016-06-12T10:16:56+08:00" content="2016-06-12">
+            <time itemprop="dateCreated" datetime="2016-06-12T14:43:56+08:00" content="2016-06-12">
               2016-06-12
             </time>
           </span>
@@ -254,8 +262,8 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/12/JavaDay2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/JavaDay2/" itemprop="commentsCount"></span>
+                <a href="/2016/06/12/JavaDay6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/JavaDay6/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,132 +283,253 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 
       
         <span itemprop="articleBody"><ul>
-<li>回顾 </li>
-<li>表达式（关系运算符、逻辑运算符、条件运算符）</li>
-<li>分支语句结构（if语句，switch语句）</li>
+<li>回顾</li>
+<li>访问权限</li>
+<li>方法</li>
+<li>setter getter this</li>
+<li>构造方法</li>
+<li>方法的重载</li>
 </ul>
 <a id="more"></a>
-<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>在说表达式前，我们回顾下基本数据类型中的boolean类型，它是一种非真即假的数据类型，所有只有true和false两个值，默认取值为false。<br>像关系运算符、逻辑运算符和条件运算符都与boolean类型相关</p>
-<h3 id="关系表达式"><a href="#关系表达式" class="headerlink" title="关系表达式"></a>关系表达式</h3><ul>
-<li>关系运算符:&gt;、&gt;=、&lt;、&lt;=、!=、==</li>
-<li>关系表达式的返回值类型为boolean类型<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3>  逻辑与：&amp;&amp;       有一个假就为假<br>  逻辑或：||        有一个真就为真<br>  逻辑非：！        非真即假  非假即真</li>
-<li>逻辑表达式的返回值类型为boolean类型</li>
+<h2 id="访问权限"><a href="#访问权限" class="headerlink" title="访问权限"></a>访问权限</h2><h3 id="面向对象编程三大特征之一-封装"><a href="#面向对象编程三大特征之一-封装" class="headerlink" title="面向对象编程三大特征之一 封装"></a>面向对象编程三大特征之一 <i>封装</i></h3><ul>
+<li><p>什么是封装？</p>
+<blockquote>
+<p> 对象的一种保护机制，隐藏对象的属性和实现细节，仅对外提供公共访问方式。<br><br>白话：    该露的露，该藏的藏<br><br>专业：    我们程序设计要追求“高内聚，低耦合”。<br><br>高内聚:就是类的内部数据操作细节自己完成，不允许外部干涉；<br><br>低耦合：仅暴露少量的方法给外部使用<br><br>耦合: 程序的一部分对另一部分的依赖关系</p>
+</blockquote>
+</li>
+<li><p>目的：</p>
+<blockquote>
+<p>隐藏一个类的实现细节, 便于调用者调用<br><br>防止对封装数据的未经授权的访问,有利于保证数据的完整性<br><br>便于修改，增强代码的可维护性</p>
+</blockquote>
+</li>
+<li><p>封装原则：</p>
+<blockquote>
+<p>将不需要对外提供的内容都隐藏起来。<br><br>把属性都隐藏，提供公共方法对其访问</p>
+</blockquote>
+</li>
+<li><p>示例：</p>
+<pre><code>/*
+人：
+属性：
+    年龄。
+
+行为：
+    说话。
+
+*/
+class Person
+{
+    int age;
+
+    void speak()
+    {
+        System.out.println(&quot;age=&quot;+age);
+    }
+}
+
+class  PersonDemo
+{
+    public static void main(String[] args) 
+    {
+        Person p = new Person();
+//        p.age = 20;  //可以
+
+          p.age = -20;   //???
+    }
+}
+</code></pre><p>p.age = -20;这个是不是不太合适啊。<br><br>我们在对事物进行描述的时候，要符合事物的特点？年龄没有负数的啊<br 那为什么会发生这种现象？我们只用到了这种类型中的一部分。<br=""><br>那么该怎么办？<br><br>我们要对这样的数据进行控制？<br><br>出现这种现象是因为，这个age在被其他程序创建对象后，直接访问了，这样造成了安全隐患。<br>  那么就不让他访问？我们使用private(私有的意思)关键字进行限定  </p>
+</li>
 </ul>
-<h3 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h3><pre><code>？：运算符
-表达式A ？表达式B : 表达式C
-</code></pre><ul>
-<li>整个表达式的结果根据表达式A的结果来判断，表达式A的结果为true，整个表达式的结果为，表达式B，否则为表达式C。</li>
-</ul>
-<h2 id="分支语句结构"><a href="#分支语句结构" class="headerlink" title="分支语句结构"></a>分支语句结构</h2><p>语句有三种结构：顺序结构，分支结构和循环结构</p>
-<h3 id="if语句-三种结构"><a href="#if语句-三种结构" class="headerlink" title="if语句(三种结构)"></a>if语句(三种结构)</h3><h4 id="if语句的形式一："><a href="#if语句的形式一：" class="headerlink" title="if语句的形式一："></a>if语句的形式一：</h4><pre><code>if(条件表达式) {
-   语句或块1;
+<pre><code>class Person
+{
+    private /*私有*/int age;
+
+    public void live(int a)
+    {
+        if(a&gt;0 &amp;&amp; a&lt;130)
+        {
+            age = a;
+            speak();
+        }
+        else
+            System.out.println(&quot;错误的数据&quot;);
+    }
+
+    void speak()
+    {
+        System.out.println(&quot;age=&quot;+age);
+    }
+}
+
+class Person
+{
+    private /*私有*/int age;
+
+    public void setAge(int a)//setXxx getXxx
+    {
+        age = a;
+    }
+    public int getAge()
+    {
+        return age;
+    }
+
+    void speak()
+    {
+        System.out.println(&quot;age=&quot;+age);
+    }
 }
 </code></pre><ul>
-<li><p>当条件表达式的结果为true时，执行语句或块1</p>
-</li>
-<li><p><img src="http://ww3.sinaimg.cn/large/005KqbSEgw1f4s9s7yo96j306i05umx9.jpg" alt=""></p>
+<li>private:私有，是一个权限修饰符。用于修饰成员。</li>
+<li>私有的内容只在本类中有效。</li>
+<li>注意：私有仅仅是封装的一种体现而已。</li>
+</ul>
+<h3 id="修饰符（modifier）"><a href="#修饰符（modifier）" class="headerlink" title="修饰符（modifier）"></a>修饰符（modifier）</h3><ul>
+<li><p>在类、类的属性以及类的方法前面加修饰符可限定其访问权限,实现其在一定范围内的信息隐藏。</p>
+<p><img src="http://ww4.sinaimg.cn/large/005KqbSEgw1f4sj78j9ywj30h00793yt.jpg" alt=""></p>
+<p>  default不是一个修饰符,而是表示一种不加任何修饰符时的状态<br>  Protected<br>  同一个包的正常类，可以直接用他的实例进行访问<br>  不同包的正常类，无法访问任何属性和方法<br>  不同包的子类，不能使用父类实例的属性和方法<br>  不同包的子类，不能使用其它包的子类实例的属性和方法<br>  不同包的子类，可以直接使用父类的属性和方法<br>  总之，不同包的子类就规规矩矩的在自己的代码里用父类的属性就行了。其它的使用都是不允许的。</p>
 </li>
 </ul>
-<h4 id="if语句的形式二："><a href="#if语句的形式二：" class="headerlink" title="if语句的形式二："></a>if语句的形式二：</h4><pre><code>if(条件表达式) {
-   语句或块1;
-} else {
-   语句或块2;
-}
-</code></pre><ul>
-<li><p><img src="http://ww2.sinaimg.cn/large/005KqbSEgw1f4s8675mtxj30770690sy.jpg" alt=""></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><p>什么是函数？</p>
+<blockquote>
+<p>函数就是定义在类中的具有特定功能的一段独立小程序。<br><br>函数也称为方法。</p>
+</blockquote>
 </li>
-<li><p>当条件表达式的结果为true时，执行语句或块1，否则执行语句或块2</p>
+<li><p>函数的格式：</p>
+<pre><code>饰符 返回值类型 函数名(参数类型 形式参数1，参数类型 形式参数2，)
+{
+        执行语句;
+        return 返回值;
+}
+</code></pre></li>
+<li><p>返回值类型：函数运行后的结果的数据类型。跟返回值的数据类型有关系。 如果没有返回值的话，则使用void</p>
+</li>
+<li>方法名称：其实就是功能的名称， 那么名称可以根据功能来定义。不要使用aaa、bbb等不明确的名称</li>
+<li>参数类型：是形式参数的数据类型。</li>
+<li>形式参数：是一个变量，用于存储调用函数时传递给函数的实际参数。<br><br> 当在逻辑中 含有未知的数据参与 运算的时候 才需要参数列表<br><br>（实际参数：传递给形式参数的具体数值。）</li>
+<li>return：用于结束函数, 将返回值 返回给调用者。<br><br>当没有返回值的时候 ，我们可以直接写 return ; 即可，但是此种情况 通常可以省略不写。</li>
+<li><p>返回值：该值会返回给调用者。</p>
 </li>
 <li><p>案例：</p>
 </li>
-<li><p>判断是美女 0代表美女 1代表帅哥 </p>
-<pre><code>int sex = 0；
-if(0 == sex){
-     System.out.println(&quot;美女&quot;);
- }
-</code></pre></li>
-<li><p>判断某一年是否为润年</p>
-<pre><code>int year = 100;
-if( 0==year%400 || (0==year%4&amp;&amp; 0!=year%100 )){
-     System.out.println(&quot;是润年&quot;);
-}else{
-    System.out.println(&quot;是平年&quot;);
-}
-</code></pre></li>
+<li>用于计算两数之和，两个数是否相等，乘法表</li>
+<li>定义方法用于输出换行</li>
 </ul>
-<h4 id="if语句的形式三："><a href="#if语句的形式三：" class="headerlink" title="if语句的形式三："></a>if语句的形式三：</h4><pre><code>if(条件表达式) {
-   语句或块1;
-} else if (条件表达式2) {
-   语句或块2;
-} else {
-   语句或块3;
+<h4 id="需求1：-定义一个功能，完成两个整数的和的获取。"><a href="#需求1：-定义一个功能，完成两个整数的和的获取。" class="headerlink" title="需求1： 定义一个功能，完成两个整数的和的获取。"></a>需求1： 定义一个功能，完成两个整数的和的获取。</h4><pre><code>思路：既然定义功能，就是可以用函数来体现。
+    如何定义一个函数呢？
+    通过两个明确来完成。
+明确一：这个功能的结果是什么？
+    是和。是功能的结果，所以该功能的返回值类型是int 。
+    其实就是在明确函数的返回值类型。
+
+明确二：这个功能实现过程中是否需要未知内容参与运算？
+    有，加数和被加数。这就是函数的参数列表(参数的个数，参数的类型)
+    其实就是在明确参数列表。
+
+注意：返回值类型和参数类型没有直接关系。
+
+*/
+public static int add(int a,int b)
+{
+    int sum = a+b;
+    return sum;
 }
-</code></pre><ul>
-<li><p><img src="http://ww3.sinaimg.cn/large/005KqbSEgw1f4s87cyon5j308y086aaj.jpg" alt=""></p>
+</code></pre><h4 id="需求2：-定义一个功能，比较两个数是否相等。"><a href="#需求2：-定义一个功能，比较两个数是否相等。" class="headerlink" title="需求2： 定义一个功能，比较两个数是否相等。"></a>需求2： 定义一个功能，比较两个数是否相等。</h4><pre><code>明确一：这个功能的结果是什么？
+        有，boolean.
+明确二：这个功能实现过程中是否需要未知内容参与运算？
+        有，两个整数。
+
+    public static boolean equals(int a,int b)
+    {
+        /*
+        if(a==b)
+            return true;
+        else
+            return false;
+
+
+        boolean x ;
+        if(a==b)
+            x = true;
+        else
+            x = false;
+        return x;
+
+        */
+//        return (a==b)?true:false;
+
+        return a==b;
+
+}
+</code></pre><h4 id="需求3：-定义功能，打印99乘法表。"><a href="#需求3：-定义功能，打印99乘法表。" class="headerlink" title="需求3： 定义功能，打印99乘法表。"></a>需求3： 定义功能，打印99乘法表。</h4><pre><code>public static void print99()
+{
+    for(int x=1; x&lt;=9; x++)
+    {
+        for(int y=1; y&lt;=x; y++)
+        {
+            System.out.print(y+&quot;*&quot;+x+&quot;=&quot;+y*x+&quot;\t&quot;);
+        }
+        System.out.println();
+    }
+}
+</code></pre><h4 id="注意问题："><a href="#注意问题：" class="headerlink" title="注意问题："></a>注意问题：</h4><pre><code>1、方法要定义在类中
+2、和顺序无关 
+3、不可以在方法里 再定义方法
+4、可以在方法里  调用其他的方法
+</code></pre><h2 id="局部变量与全局"><a href="#局部变量与全局" class="headerlink" title="局部变量与全局"></a>局部变量与全局</h2><h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><ul>
+<li>定义在类的方法内或代码块内的变量</li>
+<li>局部变量只在定义它的方法体内或代码块内有效</li>
+<li>局部变量在使用之前，必须先初始化</li>
+</ul>
+<h3 id="全局变量（成员变量）"><a href="#全局变量（成员变量）" class="headerlink" title="全局变量（成员变量）"></a>全局变量（成员变量）</h3><ul>
+<li>一个类中既不在方法体内也不在程序块内定义的变量</li>
+<li>类中所有的方法和代码块都可以访问成员变量</li>
+<li>对于没有初始化的成员变量，系统会指定默认的值 </li>
+</ul>
+<h4 id="成员变量的默认初值"><a href="#成员变量的默认初值" class="headerlink" title="成员变量的默认初值"></a>成员变量的默认初值</h4><p><img src="http://ww1.sinaimg.cn/large/005KqbSEgw1f4sj9pv2yij30ex0840ta.jpg" alt=""></p>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><ul>
+<li><p>当成员变量和局部变量重名，可以用关键字this来区分。//仅仅是this的一个表现形式</p>
 </li>
-<li><p>当条件表达式的结果为true时，执行语句或块1，否则判断条件表达式2，当条件表达式2的结果为true，执行语句或块2，如果两个条件都不满足，执行语句或块3</p>
+<li><p>this : 代表对象。代表哪个对象呢？当前对象。<br></p>
+<pre><code>this就是所在函数所属对象的引用。&lt;br /&gt;
+简单说：哪个对象调用了this所在的函数，this就代表哪个对象
+</code></pre></li>
+<li><p>this也可以用于在构造函数中调用其他构造函数。<br><br>注意：只能定义在构造函数的第一行。因为初始化动作要先执行。 </p>
 </li>
-<li><p>案例：现有一个字符，判断字符是大写字母，小写字母，数字，其他符号中的那一种</p>
-<pre><code>char ch = &apos;8&apos;;
-if( &apos;A&apos;&lt;=ch &amp;&amp; &apos;Z&apos; &gt;=ch){
-      System.out.println(&quot;字符是：大写字母&quot;);
-}else if( &apos;a&apos;&lt;=ch &amp;&amp; &apos;z&apos; &gt;= ch){
-      System.out.println(&quot;字符是：小写字母&quot;);
-}else if( &apos;0&apos; &lt;= ch &amp;&amp; &apos;9&apos; &gt;= ch){
-      System.out.println(&quot;字符是：数字字符&quot;);
-}else{
-     System.out.println(&quot;字符是：其他字符&quot;);
-}
+<li><p><b>凡是被对象调用的东西 比如属性或函数 它们都持有一个this引用 </b></p>
+</li>
+</ul>
+<h2 id="重载-overload"><a href="#重载-overload" class="headerlink" title="重载(overload)"></a>重载(overload)</h2><ul>
+<li><b>重载的概念</b><br><br>  在同一个类中，允许存在一个以上的同名函数，只要它们的参数个数或者参数类型不同即可。</li>
+<li><b>重载的特点：</b><br><br>  与返回值类型无关，只看参数列表。</li>
+<li><b>重载的好处：</b><br><br>  方便于阅读，优化了程序设计。</li>
+<li><p><b>重载示例：</b></p>
+<pre><code>//返回两个整数的和
+ int add(int x,int y){return x+y;}
+
+//返回三个整数的和
+int add(int x,int y,int z){return x+y+z;}
+
+//返回两个小数的和
+double add(double x,double y){return x+y;}
 </code></pre></li>
 </ul>
-<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><h4 id="switch语句形式"><a href="#switch语句形式" class="headerlink" title="switch语句形式"></a>switch语句形式</h4><pre><code>switch(表达式) {
-    case 表达式1:
-         语句或块1;
-         break; //结束switch语句
-    default:
-        默认语句或块
-        break;   //最后一个语句中的 break可以省略
-}
-</code></pre><ul>
-<li>判断表达式的结果是否与表达式1一致，如果一致，执行语句或块1，如果不一致，执行默认语句或块</li>
-<li>条件只能是字符型或者整型</li>
+<p><b>总结：重载特点，两同三不同</b></p>
+<h2 id="构造器（构造方法）"><a href="#构造器（构造方法）" class="headerlink" title="构造器（构造方法）"></a>构造器（构造方法）</h2><ul>
+<li><p>通过构造器用于构造该类的对象。Java通过new关键字来调用构造器，从而返回该类的对象。是一种特殊的方法： </p>
+<pre><code>[修饰符]  类名 (参数列表){
+        //n条语句
+}     
+</code></pre></li>
+<li><p>1、构造器没有返回值类型</p>
+</li>
+<li>2、方法名称要和类名保持一致</li>
+<li>3、一个类中可以有多个构造器，但是参数列表不同：参数的顺序不同、参数的类型不同、参数的个数不同</li>
+<li>4、构建类的对象  通过new关键字  例：Mobile stu=new Mobile();</li>
+<li>5、系统会自动添加一个无参的构造器</li>
+<li>6、当含有有参的构造器时 会把默认的无参的构造器干掉</li>
 </ul>
-<h5 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h5><pre><code>int month = 101;
-switch (month) {
-    case 3:
-    case 4:
-    case 5:
-         System.out.println(&quot;春天&quot;);
-    break;
-
-    case 6:
-    case 7:        
-    case 8:
-        System.out.println(&quot;夏天&quot;);
-    break;
-
-    case 9:
-    case 10:
-    case 11:
-         System.out.println(&quot;秋天&quot;);
-    break;
-
-    case 12:
-    case 1:
-    case 2:
-         System.out.println(&quot;冬天&quot;);
-     break;
-    default:
-        System.out.println(&quot;输入错误，请重新输入~~&quot;);
-   }
-</code></pre><h6 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h6><ul>
-<li>if与switch之间的区别和优缺点</li>
-</ul>
-<ol>
-<li>if条件可以是布尔类型的合法表达式、常量等；switch条件只能是字符型或者整型 </li>
-<li>switch适合处理判断分支较多的情况下(代码可读性好)，而if适合处理判断分支较少的情况下(反之代码可读性差，容易出现漏判或重复判断)。</li>
-</ol>
-<p>练习：<br>   写一个程序判断-100到100的数是奇数还是偶数;<br>   判断年份是否为闰年;</p>
 </span>
       
     </div>
@@ -418,16 +547,16 @@ switch (month) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/06/JavaDay1/" rel="next" title="Android从自学到放弃01">
-                <i class="fa fa-chevron-left"></i> Android从自学到放弃01
+              <a href="/2016/06/12/JavaDay5/" rel="next" title="Android从自学到放弃05">
+                <i class="fa fa-chevron-left"></i> Android从自学到放弃05
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/12/JavaDay3/" rel="prev" title="Android从自学到放弃03">
-                Android从自学到放弃03 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/12/JavaDay7/" rel="prev" title="Android从自学到放弃07">
+                Android从自学到放弃07 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -443,10 +572,10 @@ switch (month) {
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/12/JavaDay2/"
-     data-title="Android从自学到放弃02"
+        <div class="ds-share flat" data-thread-key="2016/06/12/JavaDay6/"
+     data-title="Android从自学到放弃06"
      data-content=""
-     data-url="http://yoursite.com/2016/06/12/JavaDay2/">
+     data-url="http://yoursite.com/2016/06/12/JavaDay6/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -474,8 +603,8 @@ switch (month) {
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/12/JavaDay2/"
-           data-title="Android从自学到放弃02" data-url="http://yoursite.com/2016/06/12/JavaDay2/">
+      <div class="ds-thread" data-thread-key="2016/06/12/JavaDay6/"
+           data-title="Android从自学到放弃06" data-url="http://yoursite.com/2016/06/12/JavaDay6/">
       </div>
     
   </div>
@@ -583,7 +712,7 @@ switch (month) {
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#表达式"><span class="nav-number">1.</span> <span class="nav-text">表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关系表达式"><span class="nav-number">1.1.</span> <span class="nav-text">关系表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件运算符"><span class="nav-number">1.3.</span> <span class="nav-text">条件运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支语句结构"><span class="nav-number">2.</span> <span class="nav-text">分支语句结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if语句-三种结构"><span class="nav-number">2.1.</span> <span class="nav-text">if语句(三种结构)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if语句的形式一："><span class="nav-number">2.1.1.</span> <span class="nav-text">if语句的形式一：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if语句的形式二："><span class="nav-number">2.1.2.</span> <span class="nav-text">if语句的形式二：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if语句的形式三："><span class="nav-number">2.1.3.</span> <span class="nav-text">if语句的形式三：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch语句"><span class="nav-number">2.2.</span> <span class="nav-text">switch语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#switch语句形式"><span class="nav-number">2.2.1.</span> <span class="nav-text">switch语句形式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#案例："><span class="nav-number">2.2.1.1.</span> <span class="nav-text">案例：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#总结："><span class="nav-number">2.2.1.1.1.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#访问权限"><span class="nav-number">1.</span> <span class="nav-text">访问权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象编程三大特征之一-封装"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象编程三大特征之一 封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰符（modifier）"><span class="nav-number">1.2.</span> <span class="nav-text">修饰符（modifier）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#需求1：-定义一个功能，完成两个整数的和的获取。"><span class="nav-number">2.0.1.</span> <span class="nav-text">需求1： 定义一个功能，完成两个整数的和的获取。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需求2：-定义一个功能，比较两个数是否相等。"><span class="nav-number">2.0.2.</span> <span class="nav-text">需求2： 定义一个功能，比较两个数是否相等。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需求3：-定义功能，打印99乘法表。"><span class="nav-number">2.0.3.</span> <span class="nav-text">需求3： 定义功能，打印99乘法表。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意问题："><span class="nav-number">2.0.4.</span> <span class="nav-text">注意问题：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部变量与全局"><span class="nav-number">3.</span> <span class="nav-text">局部变量与全局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局部变量"><span class="nav-number">3.1.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量（成员变量）"><span class="nav-number">3.2.</span> <span class="nav-text">全局变量（成员变量）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量的默认初值"><span class="nav-number">3.2.1.</span> <span class="nav-text">成员变量的默认初值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this关键字"><span class="nav-number">4.</span> <span class="nav-text">this关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重载-overload"><span class="nav-number">5.</span> <span class="nav-text">重载(overload)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造器（构造方法）"><span class="nav-number">6.</span> <span class="nav-text">构造器（构造方法）</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
