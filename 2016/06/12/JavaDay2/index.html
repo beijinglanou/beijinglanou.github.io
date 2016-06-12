@@ -1,0 +1,831 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="回顾 
+表达式（关系运算符、逻辑运算符、条件运算符）
+分支语句结构（if语句，switch语句）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android从自学到放弃02">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/JavaDay2/index.html">
+<meta property="og:site_name" content="coder_qi">
+<meta property="og:description" content="回顾 
+表达式（关系运算符、逻辑运算符、条件运算符）
+分支语句结构（if语句，switch语句）">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1780637-db6fe6f12df45880.png">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/005KqbSEgw1f4s8675mtxj30770690sy.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/005KqbSEgw1f4s87cyon5j308y086aaj.jpg">
+<meta property="og:updated_time" content="2016-06-12T02:22:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android从自学到放弃02">
+<meta name="twitter:description" content="回顾 
+表达式（关系运算符、逻辑运算符、条件运算符）
+分支语句结构（if语句，switch语句）">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1780637-db6fe6f12df45880.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: '',
+    motion: true
+  };
+</script>
+
+  <title> Android从自学到放弃02 | coder_qi </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">coder_qi</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">simple life easy life</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="search_id" class="st-default-search-input" />
+  </form>
+
+<script type="text/javascript">
+(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+_st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
+</script>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android从自学到放弃02
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Veröffentlicht am
+            <time itemprop="dateCreated" datetime="2016-06-12T10:13:56+08:00" content="2016-06-12">
+              2016-06-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; in
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/垫石铺路/" itemprop="url" rel="index">
+                    <span itemprop="name">垫石铺路</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/12/JavaDay2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/JavaDay2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><ul>
+<li>回顾 </li>
+<li>表达式（关系运算符、逻辑运算符、条件运算符）</li>
+<li>分支语句结构（if语句，switch语句）</li>
+</ul>
+<a id="more"></a>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>在说表达式前，我们回顾下基本数据类型中的boolean类型，它是一种非真即假的数据类型，所有只有true和false两个值，默认取值为false。<br>像关系运算符、逻辑运算符和条件运算符都与boolean类型相关</p>
+<h3 id="关系表达式"><a href="#关系表达式" class="headerlink" title="关系表达式"></a>关系表达式</h3><ul>
+<li>关系运算符:&gt;、&gt;=、&lt;、&lt;=、!=、==</li>
+<li>关系表达式的返回值类型为boolean类型<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3>  逻辑与：&amp;&amp;       有一个假就为假<br>  逻辑或：||        有一个真就为真<br>  逻辑非：！        非真即假  非假即真</li>
+<li>逻辑表达式的返回值类型为boolean类型</li>
+</ul>
+<h3 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h3><pre><code>？：运算符
+表达式A ？表达式B : 表达式C
+</code></pre><ul>
+<li>整个表达式的结果根据表达式A的结果来判断，表达式A的结果为true，整个表达式的结果为，表达式B，否则为表达式C。</li>
+</ul>
+<h2 id="分支语句结构"><a href="#分支语句结构" class="headerlink" title="分支语句结构"></a>分支语句结构</h2><p>语句有三种结构：顺序结构，分支结构和循环结构</p>
+<h3 id="if语句-三种结构"><a href="#if语句-三种结构" class="headerlink" title="if语句(三种结构)"></a>if语句(三种结构)</h3><h4 id="if语句的形式一："><a href="#if语句的形式一：" class="headerlink" title="if语句的形式一："></a>if语句的形式一：</h4><pre><code>if(条件表达式) {
+   语句或块1;
+}
+</code></pre><ul>
+<li><p>当条件表达式的结果为true时，执行语句或块1</p>
+</li>
+<li><p><img src="http://upload-images.jianshu.io/upload_images/1780637-db6fe6f12df45880.png" alt=""></p>
+</li>
+</ul>
+<h4 id="if语句的形式二："><a href="#if语句的形式二：" class="headerlink" title="if语句的形式二："></a>if语句的形式二：</h4><pre><code>if(条件表达式) {
+   语句或块1;
+} else {
+   语句或块2;
+}
+</code></pre><ul>
+<li><p><img src="http://ww2.sinaimg.cn/large/005KqbSEgw1f4s8675mtxj30770690sy.jpg" alt=""></p>
+</li>
+<li><p>当条件表达式的结果为true时，执行语句或块1，否则执行语句或块2</p>
+</li>
+<li><p>案例：</p>
+</li>
+<li><p>判断是美女 0代表美女 1代表帅哥 </p>
+<pre><code>int sex = 0；
+if(0 == sex){
+     System.out.println(&quot;美女&quot;);
+ }
+</code></pre></li>
+<li><p>判断某一年是否为润年</p>
+<pre><code>int year = 100;
+if( 0==year%400 || (0==year%4&amp;&amp; 0!=year%100 )){
+     System.out.println(&quot;是润年&quot;);
+}else{
+    System.out.println(&quot;是平年&quot;);
+}
+</code></pre></li>
+</ul>
+<h4 id="if语句的形式三："><a href="#if语句的形式三：" class="headerlink" title="if语句的形式三："></a>if语句的形式三：</h4><pre><code>if(条件表达式) {
+   语句或块1;
+} else if (条件表达式2) {
+   语句或块2;
+} else {
+   语句或块3;
+}
+</code></pre><ul>
+<li><p><img src="http://ww3.sinaimg.cn/large/005KqbSEgw1f4s87cyon5j308y086aaj.jpg" alt=""></p>
+</li>
+<li><p>当条件表达式的结果为true时，执行语句或块1，否则判断条件表达式2，当条件表达式2的结果为true，执行语句或块2，如果两个条件都不满足，执行语句或块3</p>
+</li>
+<li><p>案例：现有一个字符，判断字符是大写字母，小写字母，数字，其他符号中的那一种</p>
+<pre><code>char ch = &apos;8&apos;;
+if( &apos;A&apos;&lt;=ch &amp;&amp; &apos;Z&apos; &gt;=ch){
+      System.out.println(&quot;字符是：大写字母&quot;);
+}else if( &apos;a&apos;&lt;=ch &amp;&amp; &apos;z&apos; &gt;= ch){
+      System.out.println(&quot;字符是：小写字母&quot;);
+}else if( &apos;0&apos; &lt;= ch &amp;&amp; &apos;9&apos; &gt;= ch){
+      System.out.println(&quot;字符是：数字字符&quot;);
+}else{
+     System.out.println(&quot;字符是：其他字符&quot;);
+}
+</code></pre></li>
+</ul>
+<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><h4 id="switch语句形式"><a href="#switch语句形式" class="headerlink" title="switch语句形式"></a>switch语句形式</h4><pre><code>switch(表达式) {
+    case 表达式1:
+         语句或块1;
+         break; //结束switch语句
+    default:
+        默认语句或块
+        break;   //最后一个语句中的 break可以省略
+}
+</code></pre><ul>
+<li>判断表达式的结果是否与表达式1一致，如果一致，执行语句或块1，如果不一致，执行默认语句或块</li>
+<li>条件只能是字符型或者整型</li>
+</ul>
+<h5 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h5><pre><code>int month = 101;
+switch (month) {
+    case 3:
+    case 4:
+    case 5:
+         System.out.println(&quot;春天&quot;);
+    break;
+
+    case 6:
+    case 7:        
+    case 8:
+        System.out.println(&quot;夏天&quot;);
+    break;
+
+    case 9:
+    case 10:
+    case 11:
+         System.out.println(&quot;秋天&quot;);
+    break;
+
+    case 12:
+    case 1:
+    case 2:
+         System.out.println(&quot;冬天&quot;);
+     break;
+    default:
+        System.out.println(&quot;输入错误，请重新输入~~&quot;);
+   }
+</code></pre><h6 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h6><ul>
+<li>if与switch之间的区别和优缺点</li>
+</ul>
+<ol>
+<li>if条件可以是布尔类型的合法表达式、常量等；switch条件只能是字符型或者整型 </li>
+<li>switch适合处理判断分支较多的情况下(代码可读性好)，而if适合处理判断分支较少的情况下(反之代码可读性差，容易出现漏判或重复判断)。</li>
+</ol>
+<p>练习：<br>   写一个程序判断-100到100的数是奇数还是偶数;<br>   判断年份是否为闰年;</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag">#android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/06/JavaDay1/" rel="next" title="Android从自学到放弃01">
+                <i class="fa fa-chevron-left"></i> Android从自学到放弃01
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/06/12/JavaDay2/"
+     data-title="Android从自学到放弃02"
+     data-content=""
+     data-url="http://yoursite.com/2016/06/12/JavaDay2/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/12/JavaDay2/"
+           data-title="Android从自学到放弃02" data-url="http://yoursite.com/2016/06/12/JavaDay2/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://ww4.sinaimg.cn/large/005KqbSEjw1etuobhgiomj30ee0ecgn8.jpg" alt="coder_qi" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">coder_qi</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">纵然疯狂却也抵不住冥想</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">Kategorien</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">Tags</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/honourcoder" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5266617816" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#表达式"><span class="nav-number">1.</span> <span class="nav-text">表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关系表达式"><span class="nav-number">1.1.</span> <span class="nav-text">关系表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件运算符"><span class="nav-number">1.3.</span> <span class="nav-text">条件运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支语句结构"><span class="nav-number">2.</span> <span class="nav-text">分支语句结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if语句-三种结构"><span class="nav-number">2.1.</span> <span class="nav-text">if语句(三种结构)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if语句的形式一："><span class="nav-number">2.1.1.</span> <span class="nav-text">if语句的形式一：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if语句的形式二："><span class="nav-number">2.1.2.</span> <span class="nav-text">if语句的形式二：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if语句的形式三："><span class="nav-number">2.1.3.</span> <span class="nav-text">if语句的形式三：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch语句"><span class="nav-number">2.2.</span> <span class="nav-text">switch语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#switch语句形式"><span class="nav-number">2.2.1.</span> <span class="nav-text">switch语句形式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#案例："><span class="nav-number">2.2.1.1.</span> <span class="nav-text">案例：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#总结："><span class="nav-number">2.2.1.1.1.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+          </script>
+          <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"coder"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
