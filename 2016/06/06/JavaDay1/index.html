@@ -62,7 +62,7 @@ HelloWorld
 <meta property="og:image" content="http://i.imgur.com/CmlH1wV.jpg">
 <meta property="og:image" content="http://i.imgur.com/RlW8PnS.jpg">
 <meta property="og:image" content="http://i.imgur.com/ULMK1bv.jpg">
-<meta property="og:updated_time" content="2016-06-12T02:06:03.000Z">
+<meta property="og:updated_time" content="2016-06-13T04:04:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android从自学到放弃01">
 <meta name="twitter:description" content="环境搭建
@@ -138,7 +138,7 @@ HelloWorld
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -148,7 +148,7 @@ HelloWorld
             
               <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -227,7 +227,7 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 
         <div class="post-meta">
           <span class="post-time">
-            Veröffentlicht am
+            Posted on
             <time itemprop="dateCreated" datetime="2016-06-06T10:13:56+08:00" content="2016-06-06">
               2016-06-06
             </time>
@@ -235,7 +235,7 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; in
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/垫石铺路/" itemprop="url" rel="index">
@@ -277,9 +277,9 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
         <span itemprop="articleBody"><ul>
 <li>环境搭建</li>
 <li>HelloWorld</li>
-<li>基本语法<a id="more"></a>
-</li>
+<li>基本语法</li>
 </ul>
+<a id="more"></a>
 <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><p>Java是一种编程语言，具有免费，开源，扩平台等特点，有由Sun Microsystems,Inc.开发，现已被Oracle(甲骨文)公司收购。 Oracle网址是www.oracle.com 。<br>随着WebKit而兴起的,因其一次编译到处运行的特性而发展起来.为什么是一次编译到处运行呢?因为JVM</p>
 <h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ul>
 <li><strong>JVM</strong>(Java Virtual Machine), Java虚拟机，就是一种用于计算设备规范，根据这个规范，能够在物理机器上模拟出来一台用于运行Java程序机器。</li>
@@ -287,16 +287,35 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 <li><strong>JDK</strong>(Java Development Kit), Java 语言的软件开发工具包，提供了开发用到的工具和运行时环境</li>
 </ul>
 <h4 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h4><ul>
-<li><strong>JavaSE</strong>(Java Standard Edition),标准版，是我们通常用的一个版本，用于学习和开发桌面应用， 例如：JavaSE版本的星际争霸 （下载地址：<a href="http://download.csdn.net/detail/obuyiseng/9467877）" target="_blank" rel="external">http://download.csdn.net/detail/obuyiseng/9467877）</a></li>
-<li><strong>JavaEE</strong>(Java Enterprise Edition),企业版，使用这种JDK开发企业级应用程序， 比如：金融系统、电信系统、军工系统等</li>
-<li><strong>JavaME</strong>(Java Micro Edition)，主要用于移动设备、嵌入式设备上的java应用程序，应用比较广的是曾经的Nokia系列手机上，例如：Java版QQ等</li>
+<li><strong>JavaSE</strong>(Java Standard Edition),标准版，是我们通常用的一个版本，用于学习和开发桌面应用.例如Java版本的坦克大战,还有一些手机应用的抓包工具.</li>
+<li><strong>JavaEE</strong>(Java Enterprise Edition),企业版，使用这种JDK开发企业级应用程序， 比如：金融系统、电信系统、军工系统等,重点在Web的应用上,他包含了JavaSE.</li>
+<li><strong>JavaME</strong>(Java Micro Edition)，主要用于移动设备、嵌入式设备上的java应用程序，应用比较广的是曾经的Nokia系列手机上，例如：Java版QQ等,这个有些过时了.</li>
 </ul>
-<h4 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h4><p>现在的版本 1.0 1.1 1.5 jdk 6.0</p>
+<h4 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h4><p>现在的版本 1.0 1.1 1.5(5.0) jdk 6.0<br>从1.5开始,JDK有了很大的变化,版本命名也从1.x变成了x.0.</p>
+<blockquote>
+<p>JDK 1.5部分新特性<br><br>1 泛型<br><br>2 增强for循环<br><br>3 类型安全<br><br>4 可变参数</p>
+</blockquote>
 <ul>
-<li>配置环境<br>配置JAVA_HOME 和PATH<br>MAC下不需要配置环境</li>
+<li>配置环境</li>
 </ul>
-<p>成功标志 javac java -version</p>
-<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><p>开发先采用命令行的方式<br>window + R<br>notepad<br>mspaint<br>calc<br>命令行的简单解释<br>cd<br>dir<br>mkdir<br>rename<br>写文件 cd. &gt;a.txt<br>编辑文件 notepad a.txt</p>
+<blockquote>
+<p>JAVA_HOME : (安装目录)<br><br>PATH : “;%JAVA_HOME%\bin;”<br><br>MAC下JDK不需要配置环境</p>
+</blockquote>
+<ul>
+<li>成功标志 </li>
+</ul>
+<blockquote>
+<p>javac<br>java -version</p>
+</blockquote>
+<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><p>Java开发有两种方式,一种是纯文本编辑,一种是IDE方式.</p>
+<h3 id="纯文本方式"><a href="#纯文本方式" class="headerlink" title="纯文本方式:"></a>纯文本方式:</h3><p>常用的windows快捷键</p>
+<blockquote>
+<p>window + R<br><br>notepad<br><br>mspaint<br><br>calc</p>
+</blockquote>
+<p>常用的windows命令行指令</p>
+<blockquote>
+<p>cd <br><br>dir<br><br>mkdir<br><br>rename<br><br>cd. &gt;a.txt<br><br>notepad a.txt</p>
+</blockquote>
 <ul>
 <li>1）创建HelloWorld文件， 编写代码</li>
 <li>2）保存后重命名为.java文件</li>
@@ -304,27 +323,48 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 <li>4）运行java文件:先javac （compiler）、  后java，解释为什么要这么执行（把不认识的变成自己认识的–编译，然后再进行操作–执行）</li>
 </ul>
 <p>命令解释:<br>javac<br>java</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>三种注释<br>//单行注释<br>/<em><br>多行注释
-</em>/</p>
-<p>/**</p>
+<h3 id="IDE方式"><a href="#IDE方式" class="headerlink" title="IDE方式"></a>IDE方式</h3><ul>
+<li>Eclipse介绍</li>
+</ul>
+<blockquote>
+<p>目前主流的Java开发工具,当然还有其他的,IntelliJ,MyEclipse等等.Eclipse是免费的且针对Java的开发工具,进行很多的集成和界面表现.</p>
+</blockquote>
 <ul>
+<li>Eclipse使用介绍</li>
+</ul>
+<blockquote>
+<p>创建工程</p>
+</blockquote>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><ul>
+<li><p>三种注释</p>
+</li>
+<li><p>//单行注释</p>
+</li>
+<li><p>/<em><br>多行注释
+</em>/</p>
+</li>
+<li><p>/**</p>
+</li>
 <li>@文档注释<br>*/</li>
 </ul>
 <h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><p>二进制简单介绍</p>
 <ul>
 <li><img src="http://i.imgur.com/CmlH1wV.jpg" alt=""></li>
 <li><img src="http://i.imgur.com/RlW8PnS.jpg" alt=""></li>
-<li>1）四类八种：<pre><code>（整数型）byte、short、int、long
-（浮点型）float、double
-（字符型）char
-（逻辑型）boolean
-</code></pre></li>
-<li>2）基本数据类型的存储范围</li>
+<li><p>1）四类八种：</p>
+<p> （整数型）byte、short、int、long</p>
+<p> （浮点型）float、double</p>
+<p> （字符型）char</p>
+<p>  (逻辑型）boolean</p>
+</li>
+<li><p>2）基本数据类型的存储范围</p>
+</li>
 <li>3）基本数据类型的分类原因，因为存储空间有限，避免浪费、空间不足<br> （例如：水和水杯问题）</li>
 </ul>
-<h4 id="变量与表达式"><a href="#变量与表达式" class="headerlink" title="变量与表达式"></a>变量与表达式</h4><ul>
+<h4 id="常量-变量"><a href="#常量-变量" class="headerlink" title="常量/变量"></a>常量/变量</h4><ul>
 <li>0） int num = 4；  num = 9； syso(num);</li>
 <li>1）变量的意义  <pre><code>变量代表一块存储区域，存储区域的值可以改变 例如：客房,标准间、大房间、套间等等
+(引入内存堆和栈的区别)
 </code></pre></li>
 <li>2）变量的基本组成单元  <pre><code>&lt;b&gt;三要素：&lt;/b&gt; 变量类型(分配空间) &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp;   变量名（方便操作）&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  = &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 初始值（数据）
 </code></pre></li>
@@ -333,24 +373,21 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 * c.不能使用系统保留字
 * d.见名知意
 </code></pre></li>
-<li>4）表达式就是由变量和运算符组成的</li>
-<li>5）基本运算符的认知：+、-、*、/、%、=</li>
-<li>6）复合运算符的认知：++、–、+=、-=、*=、/=、%=</li>
 </ul>
-<h4 id="包的概念和使用"><a href="#包的概念和使用" class="headerlink" title="包的概念和使用"></a>包的概念和使用</h4><p>package com.lanou.项目名或模块名<br>import 包名.文件名；<br>       包名.*;</p>
+<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><ul>
+<li>基本运算符: +、-、*、/、%、=</li>
+<li>符合运算符: ++、–、+=、-=、*=、/=、%=</li>
+<li>逻辑运算符: 后面讲</li>
+</ul>
+<h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><ul>
+<li>4）表达式就是由变量和运算符组成的</li>
+</ul>
+<h4 id="包的概念和使用"><a href="#包的概念和使用" class="headerlink" title="包的概念和使用"></a>包的概念和使用</h4><p>package com.lanou.项目名或模块名</p>
+<p>在实现上是采用的文件夹的形式</p>
+<p>import 包名.文件名；<br>       包名.*;</p>
 <font color="red">参考 《java版星际源码》</font>
 
 <h4 id="java中52个关键字"><a href="#java中52个关键字" class="headerlink" title="java中52个关键字"></a>java中52个关键字</h4><p><img src="http://i.imgur.com/ULMK1bv.jpg" alt=""></p>
-<p>#总结</p>
-<hr>
-<ul>
-<li>环境搭建</li>
-<li>HelloWorld</li>
-<li>基本数据类型</li>
-<li>变量</li>
-<li>+号的作用： 加法运算、字符串连接符号</li>
-<li>++、–</li>
-</ul>
 </span>
       
     </div>
@@ -448,10 +485,10 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table Of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -466,21 +503,21 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">Kategorien</span>
+              <span class="site-state-item-name">categories</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags/">
               <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">Tags</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -529,7 +566,7 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java"><span class="nav-number">1.0.1.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-number">1.0.2.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平台"><span class="nav-number">1.0.3.</span> <span class="nav-text">平台</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装配置"><span class="nav-number">1.0.4.</span> <span class="nav-text">安装配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HelloWorld"><span class="nav-number">2.</span> <span class="nav-text">HelloWorld</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法"><span class="nav-number">3.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">3.0.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数据类型"><span class="nav-number">3.0.2.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量与表达式"><span class="nav-number">3.0.3.</span> <span class="nav-text">变量与表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包的概念和使用"><span class="nav-number">3.0.4.</span> <span class="nav-text">包的概念和使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java中52个关键字"><span class="nav-number">3.0.5.</span> <span class="nav-text">java中52个关键字</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java"><span class="nav-number">1.0.1.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-number">1.0.2.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平台"><span class="nav-number">1.0.3.</span> <span class="nav-text">平台</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装配置"><span class="nav-number">1.0.4.</span> <span class="nav-text">安装配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HelloWorld"><span class="nav-number">2.</span> <span class="nav-text">HelloWorld</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#纯文本方式"><span class="nav-number">2.1.</span> <span class="nav-text">纯文本方式:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDE方式"><span class="nav-number">2.2.</span> <span class="nav-text">IDE方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法"><span class="nav-number">3.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">3.0.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数据类型"><span class="nav-number">3.0.2.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常量-变量"><span class="nav-number">3.0.3.</span> <span class="nav-text">常量/变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算符"><span class="nav-number">3.0.4.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式"><span class="nav-number">3.0.5.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包的概念和使用"><span class="nav-number">3.0.6.</span> <span class="nav-text">包的概念和使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java中52个关键字"><span class="nav-number">3.0.7.</span> <span class="nav-text">java中52个关键字</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
