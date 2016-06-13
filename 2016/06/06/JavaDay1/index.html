@@ -49,25 +49,25 @@
 
 
 
-<meta name="description" content="环境搭建
-HelloWorld
-基本语法">
+<meta name="description" content="环境搭建        *
+HelloWorld **
+基本语法        *">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android从自学到放弃01">
 <meta property="og:url" content="http://yoursite.com/2016/06/06/JavaDay1/index.html">
 <meta property="og:site_name" content="coder_qi">
-<meta property="og:description" content="环境搭建
-HelloWorld
-基本语法">
+<meta property="og:description" content="环境搭建        *
+HelloWorld **
+基本语法        *">
 <meta property="og:image" content="http://i.imgur.com/CmlH1wV.jpg">
 <meta property="og:image" content="http://i.imgur.com/RlW8PnS.jpg">
 <meta property="og:image" content="http://i.imgur.com/ULMK1bv.jpg">
-<meta property="og:updated_time" content="2016-06-13T04:04:46.000Z">
+<meta property="og:updated_time" content="2016-06-13T08:20:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android从自学到放弃01">
-<meta name="twitter:description" content="环境搭建
-HelloWorld
-基本语法">
+<meta name="twitter:description" content="环境搭建        *
+HelloWorld **
+基本语法        *">
 <meta name="twitter:image" content="http://i.imgur.com/CmlH1wV.jpg">
 
 
@@ -275,9 +275,9 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 
       
         <span itemprop="articleBody"><ul>
-<li>环境搭建</li>
-<li>HelloWorld</li>
-<li>基本语法</li>
+<li>环境搭建        *</li>
+<li>HelloWorld **</li>
+<li>基本语法        <em>*</em></li>
 </ul>
 <a id="more"></a>
 <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><p>Java是一种编程语言，具有免费，开源，扩平台等特点，有由Sun Microsystems,Inc.开发，现已被Oracle(甲骨文)公司收购。 Oracle网址是www.oracle.com 。<br>随着WebKit而兴起的,因其一次编译到处运行的特性而发展起来.为什么是一次编译到处运行呢?因为JVM</p>
@@ -295,6 +295,7 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 <blockquote>
 <p>JDK 1.5部分新特性<br><br>1 泛型<br><br>2 增强for循环<br><br>3 类型安全<br><br>4 可变参数</p>
 </blockquote>
+<p>下载路径<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">jdk下载传送门</a></p>
 <ul>
 <li>配置环境</li>
 </ul>
@@ -333,8 +334,14 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 <li>Eclipse使用介绍</li>
 </ul>
 <blockquote>
-<p>创建工程</p>
+<p>创建工程<br><br><br>注意:如果不安装JRE,打开Eclipse会报错,无法启动,不配置环境变量也会出现同样的问题</p>
 </blockquote>
+<ul>
+<li>Eclipse快捷键(这个快捷键先不讲,等以后熟练了之后再进行集中总结)<blockquote>
+<p>alt + / 代码提示<br><br>Ctrl + 1                 采用第一种提示方式修复代码<br><br>Ctrl + Shift + F          代码格式化<br><br>Ctrl + Shift + O     一次导入所有包<br><br>Ctrl + H             所有文件的内容查找<br><br>Ctrl + F                 在当前类里查找指定文本<br><br>Ctrl + O                 查找指定的方法<br><br>Ctrl + F11                 运行代码<br><br>F11 DeBug                模式运行代码<br><br>Ctrl + i                 对齐代码<br><br>Alt + Shift + L             补齐代码<br><br>Alt + 上下              整行的代码上下移动<br><br>Ctrl + D             整行代码删除<br><br>Ctrl + /                 注释(Java代码)<br><br>Ctrl + Shift + /     注释(布局文件里使用)<br><br>F6 Debug            向下运行一行<br>F8                     运行直至结束</p>
+</blockquote>
+</li>
+</ul>
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><ul>
 <li><p>三种注释</p>
 </li>
@@ -349,6 +356,12 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 </ul>
 <h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><p>二进制简单介绍</p>
 <ul>
+<li>引入</li>
+</ul>
+<blockquote>
+<p>家里盛菜用的菜碟不同,不能说盛一点花生米却用一个盆来装.必须对应的菜量来使用不同大小的菜碟.</p>
+</blockquote>
+<ul>
 <li><img src="http://i.imgur.com/CmlH1wV.jpg" alt=""></li>
 <li><img src="http://i.imgur.com/RlW8PnS.jpg" alt=""></li>
 <li><p>1）四类八种：</p>
@@ -357,36 +370,52 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 <p> （字符型）char</p>
 <p>  (逻辑型）boolean</p>
 </li>
-<li><p>2）基本数据类型的存储范围</p>
+<li><p>2）基本数据类型的存储范围<br>2*8 - 1</p>
 </li>
-<li>3）基本数据类型的分类原因，因为存储空间有限，避免浪费、空间不足<br> （例如：水和水杯问题）</li>
 </ul>
+<blockquote>
+<p>注意:这里讲一下字节和位之间的区别和关系</p>
+</blockquote>
+<ul>
+<li>3）基本数据类型的分类原因，因为存储空间有限，避免浪费、空间不足<br> （例如：水和水杯问题）</li>
+<li>4) 隐式类型转换和强制类型转换</li>
+<li>5)  扩展:浮点类型的精确度的计算</li>
+</ul>
+<blockquote>
+<p>float和double的范围是由指数的位数来决定的。<br>  float的指数位有8位，而double的指数位有11位，分布如下：<br>  float：<br>  1bit（符号位） 8bits（指数位） 23bits（尾数位）<br>  double：<br>  1bit（符号位） 11bits（指数位） 52bits（尾数位）<br>  于是，float的指数范围为-127~+128，而double的指数范围为-1023~+1024，并且指数位是按补码的形式来划分的。<br>  其中负指数决定了浮点数所能表达的绝对值最小的非零数；而正指数决定了浮点数所能表达的绝对值最大的数，也即决定了浮点数的取值范围。<br>  float的范围为-2^128 ~ +2^128，也即-3.40E+38 ~ +3.40E+38；double的范围为-2^1024 ~ +2^1024，也即-1.79E+308 ~ +1.79E+308。</p>
+</blockquote>
 <h4 id="常量-变量"><a href="#常量-变量" class="headerlink" title="常量/变量"></a>常量/变量</h4><ul>
 <li>0） int num = 4；  num = 9； syso(num);</li>
 <li>1）变量的意义  <pre><code>变量代表一块存储区域，存储区域的值可以改变 例如：客房,标准间、大房间、套间等等
 (引入内存堆和栈的区别)
 </code></pre></li>
-<li>2）变量的基本组成单元  <pre><code>&lt;b&gt;三要素：&lt;/b&gt; 变量类型(分配空间) &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp;   变量名（方便操作）&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  = &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 初始值（数据）
-</code></pre></li>
-<li>3）变量名的命名规则<pre><code>* a.只能由字母、数字、下划线及美元符组成并且不能以数字开头
+<li><p>2）变量的基本组成单元  </p>
+</li>
+<li><p>3）变量名的命名规则</p>
+<pre><code>* a.只能由字母、数字、下划线及美元符组成并且不能以数字开头
 * b.不能重复定义已经定义过的变量名
 * c.不能使用系统保留字
 * d.见名知意
 </code></pre></li>
 </ul>
+<p><b>三要素：</b> 变量类型(分配空间) &nbsp;&nbsp; &nbsp; &nbsp;   变量名（方便操作）&nbsp; &nbsp; &nbsp; &nbsp;  = &nbsp; &nbsp; &nbsp; &nbsp; 初始值（数据）</p>
+<blockquote>
+<p>注意:这里必须赋初值</p>
+</blockquote>
 <h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><ul>
 <li>基本运算符: +、-、*、/、%、=</li>
-<li>符合运算符: ++、–、+=、-=、*=、/=、%=</li>
+<li>复合运算符: ++、–、+=、-=、*=、/=、%=</li>
 <li>逻辑运算符: 后面讲</li>
+<li>关系运算符: 后面讲</li>
+<li>条件运算符: 后面讲</li>
 </ul>
 <h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><ul>
-<li>4）表达式就是由变量和运算符组成的</li>
+<li>4）表达式就是由常量或变量和任意个运算符组成的</li>
 </ul>
+<p>//这个放后边</p>
 <h4 id="包的概念和使用"><a href="#包的概念和使用" class="headerlink" title="包的概念和使用"></a>包的概念和使用</h4><p>package com.lanou.项目名或模块名</p>
 <p>在实现上是采用的文件夹的形式</p>
 <p>import 包名.文件名；<br>       包名.*;</p>
-<font color="red">参考 《java版星际源码》</font>
-
 <h4 id="java中52个关键字"><a href="#java中52个关键字" class="headerlink" title="java中52个关键字"></a>java中52个关键字</h4><p><img src="http://i.imgur.com/ULMK1bv.jpg" alt=""></p>
 </span>
       
