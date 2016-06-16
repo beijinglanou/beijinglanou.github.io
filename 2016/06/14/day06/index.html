@@ -1,0 +1,950 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="回顾
+继承
+重写
+关键字（ super final static）
+多态">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android从自学到放弃06">
+<meta property="og:url" content="http://yoursite.com/2016/06/14/day06/index.html">
+<meta property="og:site_name" content="coder_qi">
+<meta property="og:description" content="回顾
+继承
+重写
+关键字（ super final static）
+多态">
+<meta property="og:image" content="http://i.imgur.com/JLsSSxn.jpg">
+<meta property="og:updated_time" content="2016-06-16T03:13:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android从自学到放弃06">
+<meta name="twitter:description" content="回顾
+继承
+重写
+关键字（ super final static）
+多态">
+<meta name="twitter:image" content="http://i.imgur.com/JLsSSxn.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: '',
+    motion: true
+  };
+</script>
+
+  <title> Android从自学到放弃06 | coder_qi </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">coder_qi</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">simple life easy life</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="search_id" class="st-default-search-input" />
+  </form>
+
+<script type="text/javascript">
+(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+_st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
+</script>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android从自学到放弃06
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-06-14T13:13:56+08:00" content="2016-06-14">
+              2016-06-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/垫石铺路/" itemprop="url" rel="index">
+                    <span itemprop="name">垫石铺路</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/14/day06/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/14/day06/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><ul>
+<li>回顾</li>
+<li>继承</li>
+<li>重写</li>
+<li>关键字（ super final static）</li>
+<li>多态</li>
+</ul>
+<a id="more"></a>
+<p>##继承  面向对象编程三大特征之二</p>
+<ul>
+<li><b>引子</b><blockquote>
+<p>现实生活中的继承，例如:  玉如意 祖父 –&gt;父亲 –&gt;自己 –&gt;儿子 <br><br>程序中体现？</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p><b>概念</b></p>
+<blockquote>
+<p>继承是从已有的类中派生出新的类<br><br>新类拥有已有类的特征和行为，并且可以拓展<br><br>已有的类称为父类，新类称为子类</p>
+</blockquote>
+</li>
+<li><p><b>语法</b></p>
+<blockquote>
+<p>继承出现后,需要借助 extends关键字  写法如下：<br><br>   public class Dog extends Animal{  }<br><br>  Dog类称之为子类<br><br>  Animal类称为父类,基类（基础的类）</p>
+</blockquote>
+</li>
+<li><p>子类中就拥有了父类中所有的属性和方法, 但是构造器除外<br></p>
+</li>
+<li>存在继承关系的时候，如果本类中没有的时候 就可以去父类中找</li>
+<li><p>父类中private 修饰的属性和方法，子类 具有拥有权 而没有使用权 </p>
+</li>
+<li><p><b>示例：</b> </p>
+</li>
+<li><p>玉如意问题、动物问题</p>
+<pre><code>public class Extends {        
+    public static void main(String[] args) {
+
+        Son son = new Son();
+        System.out.println(&quot;传家宝是: &quot;+  son.heirloom);
+        son.skill();
+        son.business();
+    }
+}
+</code></pre></li>
+</ul>
+<pre><code>class Grandpa{
+    public String heirloom = &quot;玉如意&quot;;
+    public void skill()
+    {
+        System.out.println(&quot;打猎&quot;);
+    }
+}
+
+class Parent extends Grandpa{
+    public void business()
+    {
+        System.out.println(&quot;经商&quot;);
+    }
+}
+
+class Son extends Parent{
+}
+</code></pre><ul>
+<li><p><b>好处：</b></p>
+<blockquote>
+<p>避免了对多个类相同特征行为进行描述 <br><br>大大简化了代码，降低开发周期</p>
+</blockquote>
+</li>
+<li><p><b>Java继承特点：</b></p>
+</li>
+<li><p><b>1. java是单继承  可以多层继承  不可以多继承</b><br><br>  a、单继承    <br></p>
+<pre><code>class  A extends B {}    
+</code></pre><p>  b、 多层继承    <br></p>
+<pre><code>class B extends C{  }&lt;br /&gt;
+ class  A extends B {}
+</code></pre></li>
+<li><p><b>2. Object类 就java所有类的基类</b> </p>
+</li>
+</ul>
+<p>##重写(override)</p>
+<ul>
+<li><p><b>什么时候使用覆盖操作?</b> </p>
+<blockquote>
+<p>当对一个类进行子类的扩展时，子类需要保留父类的功能声明，<br>但是要定义子类中该功能的特有内容时，就使用重写操作完成.</p>
+</blockquote>
+<pre><code>class Phone
+{
+    void call()
+    {}
+    void show()
+    {        
+        //只显示电话号码
+        System.out.println(&quot;number&quot;);
+    }
+}
+
+class NewPhone extends Phone
+{
+    void show()
+    {
+        //还可以显示这个人的照片和名字
+        System.out.println(&quot;name&quot;);
+        System.out.println(&quot;pic&quot;);
+        super.show();
+    }
+}
+</code></pre></li>
+</ul>
+<ul>
+<li><p><b>方法重写的原则</b> </p>
+<blockquote>
+<p>重写方法必须和父类中被重写方法具有相同的方法名称、输入参数和返回值类型。<br><br>重写方法不能使用比父类中被重写方法更严格的访问权限。<br><br>重写方法不能比父类中被重写方法抛出更多的异常<br></p>
+</blockquote>
+</li>
+<li><p><b>重载跟重写之间的区别 </b><br><img src="http://i.imgur.com/JLsSSxn.jpg" alt=""></p>
+</li>
+</ul>
+<h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><ul>
+<li><p>在子类构造对象时，发现，访问子类构造函数时，父类也运行了。<br>为什么呢？<br>原因是：在子类的构造函数中第一行有一个默认的隐式语句。 super();</p>
+<p>子类的实例化过程：子类中所有的构造函数默认都会访问父类中的空参数的构造函数。</p>
+</li>
+</ul>
+<pre><code>为什么子类实例化的时候要访问父类中的构造函数呢？
+那是因为子类继承了父类，获取到了父类中内容(属性)，所以在使用父类内容之前，
+要先看父类是如何对自己的内容进行初始化的。
+
+所以子类在构造对象时，必须访问父类中的构造函数。 
+为什么完成这个必须的动作，就在子类的构造函数中加入了super()语句。
+
+如果父类中没有定义空参数构造函数，那么子类的构造函数必须用super明确要调用
+父类中哪个构造函数。同时子类构造函数中如果使用this调用了本类构造函数时，
+那么super就没有了，因为super和this都只能定义第一行。所以只能有一个。
+但是可以保证的是，子类中肯定会有其他的构造函数访问父类的构造函数。
+
+
+注意：supre语句必须要定义在子类构造函数的第一行。因为父类的初始化动作要先完成。
+</code></pre><p>####this和super关键字的区别<br>                     | this                                              | super<br>———- |————————–|—-<br>成员变量  | this.成员变量 调用本类的成员变量  this.age  |  super.成员变量 调用父类的成员变量super.age<br>方法        |  this.方法名()  调用本类的方法 this.getAge()  |  super.方法名   调用父类的成员变量 super.getAge()<br>构造方法  |  this() 调用本类的构造方法 this() this(参数)   | super() 调用父类的构造方法    super() super(参数)</p>
+<p>##final</p>
+<ul>
+<li>final可以修饰类，方法，变量。</li>
+<li>final修饰的类不可以被继承。</li>
+<li>final修饰的方法不可以被覆盖。</li>
+<li>final修饰的变量是一个常量。只能被赋值一次。</li>
+<li>内部类只能访问被final修饰的局部变量。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>final</th>
+<th>作用</th>
+<th>写法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类</td>
+<td>不能有子类</td>
+<td>final class A {}</td>
+</tr>
+<tr>
+<td>属性</td>
+<td>不能修改</td>
+<td>final int a = 5;</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>不能被子类复写</td>
+<td>final void sayHi() {}</td>
+</tr>
+</tbody>
+</table>
+<p>##static</p>
+<ul>
+<li><p><b>static的特点：</b> </p>
+<ol>
+<li>static是一个修饰符，用于修饰成员。</li>
+<li>static修饰的成员被所有的对象所共享。</li>
+<li>static优先于对象存在，因为static的成员随着类的加载就已经存在了。 </li>
+<li>static修饰的成员多了一种调用方式，就可以直接被类名所调用 。 类名.静态成员 。</li>
+<li>static修饰的数据是共享数据，对象中的存储的是特有数据。 </li>
+</ol>
+</li>
+<li><p><b>成员变量和静态变量的区别？</b></p>
+<p>   1.两个变量的生命周期不同。</p>
+<blockquote>
+<p>成员变量随着对象的创建而存在，随着对象的被回收而释放。<br><br>  静态变量随着类的加载而存在，随着类的消失而消失。</p>
+</blockquote>
+<p>   2.调用方式不同。</p>
+<blockquote>
+<p>成员变量只能被对象调用。<br><br>  静态变量可以被对象调用，还可以被类名调用。</p>
+</blockquote>
+<p>   3.别名不同。</p>
+<blockquote>
+<p>成员变量也称为实例变量。<br><br>  静态变量称为类变量。 </p>
+</blockquote>
+<p>  4.数据存储位置不同。</p>
+<blockquote>
+<p>成员变量数据存储在堆内存的对象中，所以也叫对象的特有数据.<br><br>  静态变量数据存储在方法区(共享数据区)的静态区，所以也叫对象的共享数据.</p>
+</blockquote>
+</li>
+</ul>
+<p> <b>静态使用的注意事项</b>：</p>
+<ul>
+<li><ol>
+<li>静态方法只能访问静态成员。(非静态既可以访问静态，又可以访问非静态)</li>
+<li>静态方法中不可以使用this或者super关键字。</li>
+<li>主函数是静态的。</li>
+</ol>
+</li>
+</ul>
+<p>##多态</p>
+<ul>
+<li><p>什么是多态？</p>
+<blockquote>
+<p>多态就是一种事物存在的多种形态。<br><br>举一个例子，例如H2O：在常温下为液态水，在100摄氏度以上为气态蒸汽，在0摄氏度下为固态冰。</p>
+</blockquote>
+</li>
+<li><p>多态性只的是<b>对象</b>的多态。</p>
+<p>  class animal{}</p>
+<p>  class cat extends animal{}</p>
+<p>  cat x = new cat();</p>
+<p>  animal x = new cat(); //一个对象，两种形态。  </p>
+<p>  猫这类事物即具备者猫的形态，又具备着动物的形态。<br>  这就是对象的多态性。 </p>
+</li>
+</ul>
+<p>简单说：就是一个对象对应着不同类型.</p>
+<p>*　 <b>animal x = new cat(); //父类的引用 指向了子类的对象    </b>    </p>
+<ul>
+<li><p>多态的好处：<br> 提高了代码的扩展性和灵活性。</p>
+</li>
+<li><p>多态的前提：</p>
+<ol>
+<li>必须有关系，继承，实现。</li>
+<li>要有覆盖。</li>
+<li>父类或接口的引用指向子类对象</li>
+</ol>
+</li>
+</ul>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag">#android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/14/day05/" rel="next" title="Android从自学到放弃05">
+                <i class="fa fa-chevron-left"></i> Android从自学到放弃05
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/14/day07/" rel="prev" title="Android从自学到放弃07">
+                Android从自学到放弃07 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/06/14/day06/"
+     data-title="Android从自学到放弃06"
+     data-content=""
+     data-url="http://yoursite.com/2016/06/14/day06/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/14/day06/"
+           data-title="Android从自学到放弃06" data-url="http://yoursite.com/2016/06/14/day06/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table Of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://ww4.sinaimg.cn/large/005KqbSEjw1etuobhgiomj30ee0ecgn8.jpg" alt="coder_qi" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">coder_qi</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">纵然疯狂却也抵不住冥想</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">categories</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">tags</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/honourcoder" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5266617816" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#super"><span class="nav-number">1.</span> <span class="nav-text">super</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+          </script>
+          <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"coder"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

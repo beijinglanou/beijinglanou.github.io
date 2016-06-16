@@ -1,0 +1,963 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="回顾
+访问权限
+方法
+setter getter this
+构造方法
+方法的重载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android从自学到放弃05">
+<meta property="og:url" content="http://yoursite.com/2016/06/14/day05/index.html">
+<meta property="og:site_name" content="coder_qi">
+<meta property="og:description" content="回顾
+访问权限
+方法
+setter getter this
+构造方法
+方法的重载">
+<meta property="og:image" content="http://i.imgur.com/nTZfxOD.jpg">
+<meta property="og:image" content="http://i.imgur.com/Ka9C92m.jpg">
+<meta property="og:updated_time" content="2016-06-16T03:14:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android从自学到放弃05">
+<meta name="twitter:description" content="回顾
+访问权限
+方法
+setter getter this
+构造方法
+方法的重载">
+<meta name="twitter:image" content="http://i.imgur.com/nTZfxOD.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: '',
+    motion: true
+  };
+</script>
+
+  <title> Android从自学到放弃05 | coder_qi </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">coder_qi</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">simple life easy life</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="search_id" class="st-default-search-input" />
+  </form>
+
+<script type="text/javascript">
+(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+_st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
+</script>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android从自学到放弃05
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-06-14T11:13:56+08:00" content="2016-06-14">
+              2016-06-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/垫石铺路/" itemprop="url" rel="index">
+                    <span itemprop="name">垫石铺路</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/14/day05/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/14/day05/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><ul>
+<li>回顾</li>
+<li>访问权限</li>
+<li>方法</li>
+<li>setter getter this</li>
+<li>构造方法</li>
+<li>方法的重载</li>
+</ul>
+<a id="more"></a>
+<h2 id="访问权限"><a href="#访问权限" class="headerlink" title="访问权限"></a>访问权限</h2><p>###面向对象编程三大特征之一 <i>封装</i></p>
+<ul>
+<li><p>什么是封装？</p>
+<blockquote>
+<p> 对象的一种保护机制，隐藏对象的属性和实现细节，仅对外提供公共访问方式。<br><br>白话：    该露的露，该藏的藏<br><br>专业：    我们程序设计要追求“高内聚，低耦合”。</p>
+<blockquote>
+<p>高内聚:就是类的内部数据操作细节自己完成，不允许外部干涉；<br><br>低耦合：仅暴露少量的方法给外部使用<br><br>耦合: 程序的一部分对另一部分的依赖关系</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>目的：</p>
+<blockquote>
+<p>隐藏一个类的实现细节, 便于调用者调用<br><br>防止对封装数据的未经授权的访问,有利于保证数据的完整性<br><br>便于修改，增强代码的可维护性</p>
+</blockquote>
+</li>
+<li><p>封装原则：</p>
+<blockquote>
+<p>将不需要对外提供的内容都隐藏起来。<br><br>把属性都隐藏，提供公共方法对其访问</p>
+</blockquote>
+</li>
+<li><p>示例：</p>
+<pre><code>/*
+人：
+属性：
+    年龄。
+
+行为：
+    说话。
+
+*/
+class Person
+{
+    int age;
+
+    void speak()
+    {
+        System.out.println(&quot;age=&quot;+age);
+    }
+}
+
+class  PersonDemo
+{
+    public static void main(String[] args) 
+    {
+        Person p = new Person();
+//        p.age = 20;  //可以
+
+          p.age = -20;   //???
+    }
+}
+</code></pre><blockquote>
+<p>p.age = -20;这个是不是不太合适啊。<br><br> 我们在对事物进行描述的时候，要符合事物的特点？年龄没有负数的啊<br><br> 那为什么会发生这种现象？我们只用到了这种类型中的一部分。<br><br> 那么该怎么办？<br><br> 我们要对这样的数据进行控制？<br><br> 出现这种现象是因为，这个age在被其他程序创建对象后，直接访问了，这样造成了安全隐患。<br>  那么就不让他访问？我们使用private(私有的意思)关键字进行限定  </p>
+</blockquote>
+</li>
+</ul>
+<pre><code>class Person
+{
+    private /*私有*/int age;
+
+    public void live(int a)
+    {
+        if(a&gt;0 &amp;&amp; a&lt;130)
+        {
+            age = a;
+            speak();
+        }
+        else
+            System.out.println(&quot;错误的数据&quot;);
+    }
+
+    void speak()
+    {
+        System.out.println(&quot;age=&quot;+age);
+    }
+}
+
+class Person
+{
+    private /*私有*/int age;
+
+    public void setAge(int a)//setXxx getXxx
+    {
+        age = a;
+    }
+    public int getAge()
+    {
+        return age;
+    }
+
+    void speak()
+    {
+        System.out.println(&quot;age=&quot;+age);
+    }
+}
+</code></pre><hr>
+<ul>
+<li>private:私有，是一个权限修饰符。用于修饰成员。</li>
+<li>私有的内容只在本类中有效。</li>
+<li>注意：私有仅仅是封装的一种体现而已。</li>
+</ul>
+<hr>
+<p>###修饰符（modifier）</p>
+<ul>
+<li><p>在类、类的属性以及类的方法前面加修饰符可限定其访问权限,实现其在一定范围内的信息隐藏。</p>
+<p><img src="http://i.imgur.com/nTZfxOD.jpg" alt=""></p>
+<p>  default不是一个修饰符,而是表示一种不加任何修饰符时的状态<br>  Protected<br>  同一个包的正常类，可以直接用他的实例进行访问<br>  不同包的正常类，无法访问任何属性和方法<br>  不同包的子类，不能使用父类实例的属性和方法<br>  不同包的子类，不能使用其它包的子类实例的属性和方法<br>  不同包的子类，可以直接使用父类的属性和方法<br>  总之，不同包的子类就规规矩矩的在自己的代码里用父类的属性就行了。其它的使用都是不允许的。</p>
+</li>
+</ul>
+<p>##方法</p>
+<ul>
+<li>什么是方法？<blockquote>
+<p> 在面向对象的语言中，有类和对象的概念，类是具有相同特征和行为的事物的抽象,行为就是方法。<br><br>在面向过程的语言中，比如c语言，将方法称之为函数，函数就是定义在类中具有特定功能的独立代码段。<br></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="方法的格式："><a href="#方法的格式：" class="headerlink" title="方法的格式："></a>方法的格式：</h3><blockquote>
+<p>   修饰符 返回值类型 方法名(参数类型 形式参数1，参数类型 形式参数2，)<br>    {<br>        执行语句; <br><br>        return 返回值; <br><br>    }</p>
+</blockquote>
+<ul>
+<li>返回值类型：方法运行后的结果的数据类型。跟返回值的数据类型有关系。如果没有返回值的话，则使用void</li>
+<li>方法名称：其实就是功能的名称，那么名称可以根据功能来定义。不要使用aaa、bbb等不明确的名称</li>
+<li>参数类型：是形式参数的数据类型。</li>
+<li>形式参数：简称形参，是一个变量，用于存储调用方法时传递给方法的实际参数。<br><br> 当在逻辑中含有未知的数据参与运算的时候 才需要参数列表<br><br>（实际参数：简称实参传递给形式参数的具体数值。）</li>
+<li>return：用于结束函数, 将返回值返回给调用者。<br><br>返回值类型为void时 ，我们可以直接写return; 通常省略不写。</li>
+<li>返回值：该值会返回给调用者。</li>
+</ul>
+<hr>
+<ul>
+<li>案例：</li>
+<li>用于计算两数之和，两个数是否相等，乘法表</li>
+<li>定义方法用于输出换行</li>
+</ul>
+<hr>
+<p>####需求1： 定义一个功能，完成两个整数的求和运算。</p>
+<ul>
+<li>思路：既然定义功能，就是可以用函数来体现。<br><br>   如何定义一个函数呢？<br><br>   通过两个明确来完成。<br></li>
+</ul>
+<ul>
+<li><p>明确一：这个功能的结果是什么？   <br><br>   求和。是功能的结果，所以该功能的返回值类型是int。<br><br>   其实就是在明确函数的返回值类型。<br></p>
+</li>
+<li><p>明确二：这个功能实现过程中是否需要未知内容参与运算？ <br><br>   有，加数和被加数。这就是函数的参数列表(参数的个数，参数的类型) <br><br>   其实就是在明确参数列表。 <br></p>
+</li>
+<li><p>注意：返回值类型和参数类型没有直接关系。</p>
+</li>
+</ul>
+<p>案例代码如下：    </p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> sumNum(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> <span class="keyword">sum</span> = a + b;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">sum</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>####需求2： 定义一个功能，比较两个数是否相等。</p>
+<ul>
+<li>明确一：这个功能的结果是什么？<pre><code>boolean.
+</code></pre></li>
+<li>明确二：这个功能实现过程中是否需要未知内容参与运算？<pre><code>两个整数。
+</code></pre></li>
+</ul>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">	public <span class="keyword">static</span> boolean equals(<span class="built_in">int</span> a,<span class="built_in">int</span> b)</span><br><span class="line">	&#123;</span><br><span class="line">		/*</span><br><span class="line">		<span class="keyword">if</span>(a==b)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		boolean x ;</span><br><span class="line">		<span class="keyword">if</span>(a==b)</span><br><span class="line">			x = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			x = <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">return</span> x;</span><br><span class="line"></span><br><span class="line">		*/</span><br><span class="line">//		<span class="keyword">return</span> (a==b)?<span class="literal">true</span>:<span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> a==b;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>####需求3： 定义功能，打印99乘法表。</p>
+<pre><code>public static void print99()
+{
+    for(int x=1; x&lt;=9; x++)
+    {
+        for(int y=1; y&lt;=x; y++)
+        {
+            System.out.print(y+&quot;*&quot;+x+&quot;=&quot;+y*x+&quot;\t&quot;);
+        }
+        System.out.println();
+    }
+}
+</code></pre><p>####注意问题：<br>   1、方法要定义在类中<br><br>    2、和顺序无关 <br><br>    3、不可以在方法里 再定义方法<br><br>    4、可以在方法里  调用其他的方法<br></p>
+<hr>
+<p>###局部变量与全局变量，this关键字的作用</p>
+<p>####局部变量</p>
+<ul>
+<li>定义在类的方法内或代码块内的变量</li>
+<li>局部变量只在定义它的方法体内或代码块内有效</li>
+<li>局部变量在使用之前，必须先初始化</li>
+</ul>
+<p>###全局变量（成员变量）</p>
+<ul>
+<li>一个类中既不在方法体内也不在程序块内定义的变量</li>
+<li>类中所有的方法和代码块都可以访问成员变量</li>
+<li>对于没有初始化的成员变量，系统会指定默认的值 </li>
+</ul>
+<p>####成员变量的默认初值<br><img src="http://i.imgur.com/Ka9C92m.jpg" alt=""></p>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><ul>
+<li><p>当成员变量和局部变量重名，可以用关键字this来区分。//仅仅是this的一个表现形式</p>
+</li>
+<li><p>this : 代表对象。代表哪个对象呢？当前对象。<br></p>
+<pre><code>this就是所在函数所属对象的引用。&lt;br /&gt;
+简单说：哪个对象调用了this所在的函数，this就代表哪个对象
+</code></pre></li>
+<li><p>this也可以用于在构造函数中调用其他构造函数。<br><br>注意：只能定义在构造函数的第一行。因为初始化动作要先执行。 </p>
+</li>
+<li><p><b>凡是被对象调用的东西 比如属性或函数 它们都持有一个this引用 </b></p>
+</li>
+</ul>
+<p>##setter设置器和getter访问器<br>由于我们在一个类里面创建属性对外不可见，所以我们可以定义方法进行属性值的操作。<br><br>在Java中，为单一实例变量赋值的方法称之为setter（设置器）<br></p>
+<p>获取单一实例变量的值得方法称之为getter（访问器）<br></p>
+<p>Java里面规定了setter和getter方法的书写格式，比如：实例变量<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">String</span> name;</span><br></pre></td></tr></table></figure></p>
+<p>####setter的书写格式如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>即set+首字母大写的实例变量名</p>
+<p>####getter的书写格式如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>即返回值类型与变量类型一样，方法名是get+首字母大写的实例变量名</p>
+<p>####setter和getter与实例变量的关系</p>
+<ul>
+<li>无论是setter还是getter，内部操作的都是实例变量<br></li>
+<li>每一个实例变量都需要一对setter和getter方法<br></li>
+</ul>
+<p>这样我们在类外使用实例变量name的时候，就可以直接使用</p>
+<ul>
+<li>person.setName(“sherry”);  设置姓名</li>
+<li>使用person.getName();  获取姓名</li>
+</ul>
+<p>##重载(overload)sx</p>
+<ul>
+<li><b>重载的概念</b><br><br>  在同一个类中，允许存在一个以上的同名函数，只要它们的参数个数或者参数类型不同即可。</li>
+<li><b>重载的特点：</b><br><br>  与返回值类型无关，只看参数列表。</li>
+<li><b>重载的好处：</b><br><br>  方便于阅读，优化了程序设计。</li>
+<li><b>重载示例：</b></li>
+</ul>
+<p>返回两个整数的和<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>返回三个整数的和<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> z)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y+z;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>返回两个小数的和<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">add</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">double</span> y)</span> </span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><b>总结：重载特点，两同三不同</b></p>
+<p>##构造器（构造方法）</p>
+<ul>
+<li><p>通过构造器用于构造该类的对象。Java通过new关键字来调用构造器，从而返回该类的对象。是一种特殊的方法： </p>
+<p>  [修饰符]  类名 (参数列表){<br></p>
+<pre><code>n条语句&lt;br/&gt;
+</code></pre><p>  }     </p>
+</li>
+<li><p>1、构造器没有返回值类型</p>
+</li>
+<li>2、方法名称要和类名保持一致</li>
+<li>3、一个类中可以有多个构造器，但是参数列表不同：参数的顺序不同、参数的类型不同、参数的个数不同</li>
+<li>4、构建类的对象  通过new关键字  例：Person stu=new Person();</li>
+<li>5、系统会自动添加一个无参的构造器</li>
+<li>6、当含有有参的构造器时 会把默认的无参的构造器干掉</li>
+</ul>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag">#android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/12/JavaDay4/" rel="next" title="Android从自学到放弃04">
+                <i class="fa fa-chevron-left"></i> Android从自学到放弃04
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/14/day06/" rel="prev" title="Android从自学到放弃06">
+                Android从自学到放弃06 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/06/14/day05/"
+     data-title="Android从自学到放弃05"
+     data-content=""
+     data-url="http://yoursite.com/2016/06/14/day05/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/14/day05/"
+           data-title="Android从自学到放弃05" data-url="http://yoursite.com/2016/06/14/day05/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table Of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://ww4.sinaimg.cn/large/005KqbSEjw1etuobhgiomj30ee0ecgn8.jpg" alt="coder_qi" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">coder_qi</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">纵然疯狂却也抵不住冥想</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">categories</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">tags</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/honourcoder" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5266617816" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#访问权限"><span class="nav-number">1.</span> <span class="nav-text">访问权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法的格式："><span class="nav-number">1.1.</span> <span class="nav-text">方法的格式：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this关键字"><span class="nav-number">2.</span> <span class="nav-text">this关键字</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+          </script>
+          <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"coder"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
