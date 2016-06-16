@@ -49,31 +49,24 @@
 
 
 
-<meta name="description" content="回顾
-继承
-重写
-关键字（ super final static）
-多态">
+<meta name="description" content="数组概念
+数组的使用
+集合框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android从自学到放弃07">
-<meta property="og:url" content="http://yoursite.com/2016/06/12/JavaDay7/index.html">
+<meta property="og:title" content="Android从自学到放弃08">
+<meta property="og:url" content="http://yoursite.com/2016/06/15/JavaDay8/index.html">
 <meta property="og:site_name" content="coder_qi">
-<meta property="og:description" content="回顾
-继承
-重写
-关键字（ super final static）
-多态">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/005KqbSEgw1f4sjf6kkm1j30gb05u0tg.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/005KqbSEgw1f4sjfr2s3qj30g0038jrw.jpg">
-<meta property="og:updated_time" content="2016-06-12T08:56:38.000Z">
+<meta property="og:description" content="数组概念
+数组的使用
+集合框架">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005KqbSEgw1f4vz09wv61j30fe07m3yu.jpg">
+<meta property="og:updated_time" content="2016-06-15T13:35:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android从自学到放弃07">
-<meta name="twitter:description" content="回顾
-继承
-重写
-关键字（ super final static）
-多态">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/005KqbSEgw1f4sjf6kkm1j30gb05u0tg.jpg">
+<meta name="twitter:title" content="Android从自学到放弃08">
+<meta name="twitter:description" content="数组概念
+数组的使用
+集合框架">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/005KqbSEgw1f4vz09wv61j30fe07m3yu.jpg">
 
 
 
@@ -85,7 +78,7 @@
   };
 </script>
 
-  <title> Android从自学到放弃07 | coder_qi </title>
+  <title> Android从自学到放弃08 | coder_qi </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -143,7 +136,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -153,7 +146,7 @@
             
               <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -224,7 +217,7 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
             
             
               
-                Android从自学到放弃07
+                Android从自学到放弃08
               
             
           </h1>
@@ -232,15 +225,15 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 
         <div class="post-meta">
           <span class="post-time">
-            Veröffentlicht am
-            <time itemprop="dateCreated" datetime="2016-06-12T16:43:56+08:00" content="2016-06-12">
-              2016-06-12
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-06-15T11:36:56+08:00" content="2016-06-15">
+              2016-06-15
             </time>
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; in
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/垫石铺路/" itemprop="url" rel="index">
@@ -259,8 +252,8 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/12/JavaDay7/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/JavaDay7/" itemprop="commentsCount"></span>
+                <a href="/2016/06/15/JavaDay8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/15/JavaDay8/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -280,219 +273,78 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 
       
         <span itemprop="articleBody"><ul>
-<li>回顾</li>
-<li>继承</li>
-<li>重写</li>
-<li>关键字（ super final static）</li>
-<li>多态</li>
+<li>数组概念</li>
+<li>数组的使用</li>
+<li>集合框架</li>
 </ul>
 <a id="more"></a>
-<h2 id="继承-面向对象编程三大特征之二"><a href="#继承-面向对象编程三大特征之二" class="headerlink" title="继承  面向对象编程三大特征之二"></a>继承  面向对象编程三大特征之二</h2><ul>
-<li><b>引子</b><blockquote>
-<p>现实生活中的继承，例如:  玉如意 祖父 –&gt;父亲 –&gt;自己 –&gt;儿子 <br><br>程序中体现？</p>
+<h5 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h5><blockquote>
+<p>声明变量来存储一个人的年龄?<br><br>声明变量来存储一个班的年龄呢?<br><br>声明变量来存储一个学校的所有人的年龄呢?</p>
 </blockquote>
-</li>
-</ul>
+<p>这个时候就需要数组了.</p>
+<h2 id="数组的概念"><a href="#数组的概念" class="headerlink" title="数组的概念"></a>数组的概念</h2><p>数组:</p>
+<blockquote>
+<p>一组具有相同数据类型元素的集合</p>
+</blockquote>
+<p>就像一条绿箭口香糖,里面放的都是一片片的口香糖.<br>数组元素的特点</p>
+<blockquote>
+<p>1 数据类型完全一致</p>
+<p>2 数据在内存中是物理连续的</p>
+</blockquote>
+<p>优点:数组会将存储的数据自动编号,省却了创建了多个变量的工作</p>
+<h2 id="数组的使用"><a href="#数组的使用" class="headerlink" title="数组的使用"></a>数组的使用</h2><h3 id="数组的创建"><a href="#数组的创建" class="headerlink" title="数组的创建"></a>数组的创建</h3><p>两种方式<br>方式1:</p>
+<pre><code>int array1[] = {1,2,3,4,5};
+int[] array2 = {6,7,8,9,0};
+</code></pre><p>方式2:</p>
+<pre><code>int array1[] = new int[6];
+int[] array2 = new int[6];
+</code></pre><h3 id="数组的访问和修改"><a href="#数组的访问和修改" class="headerlink" title="数组的访问和修改"></a>数组的访问和修改</h3><pre><code>arr[2] = 12;
+</code></pre><blockquote>
+<p>这里注意一下,重点体现出数据位置的偏移,指出下标的索引是从0开始的</p>
+</blockquote>
+<h5 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h5><blockquote>
+<p>创建一个整形数组,数组中有十个元素,将数组元素随机赋值[10,60].</p>
+<p>计算最大值及最大值位置</p>
+<p>计算最小值及最小值位置</p>
+<p>注意:这里可以拓展讲一下算法排序<br><br>几个常见的算法:<br><br>冒泡/选择排序<br><br>快速排序<br><br>21位水仙花数<br><br>求1-100万之间的所有质数(欧拉算法)<br><br>这里拓展下思维</p>
+</blockquote>
+<h2 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h2><p>*为什么使用集合框架?</p>
+<blockquote>
+<p>集合框架就是一种容器,使用数组有一些不方便,数组长度不可变,没有方法,链表的缺点则刚好相反,而集合框架就是把两者的优点都集合起来,这就是集合框架.</p>
+</blockquote>
+<h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><p>Collection是一个集合接口,是集合对象的父接口.规定了集合对象的功能.集合对象可以随意的添加删除对象.</p>
+<p>Collection下分两个接口,</p>
+<blockquote>
+<p>List : 数据是有序的,和数组链表类似,可以存放重复的数据<br><br>Set : 数据是无序的,没有顺序的概念,数据的获取是采用的别的方式,不可以存放重复数据</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/005KqbSEgw1f4vz09wv61j30fe07m3yu.jpg" alt=""></p>
+<p>我们在这两个里面分别讲一个常用的.<br>List下讲ArrayList,Set下讲一个HashMap</p>
+<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>常用方法:</p>
 <ul>
-<li><p><b>概念</b></p>
-<blockquote>
-<p>继承是从已有的类中派生出新的类<br><br>新类拥有已有类的特征和行为，并且可以拓展<br><br>已有的类称为父类，新类称为子类</p>
-</blockquote>
+<li><p>1 添加<br><br>list.add();</p>
 </li>
-<li><p><b>语法</b></p>
-<blockquote>
-<p>继承出现后,需要借助 extends关键字  写法如下：<br><br>   public class Dog extends Animal{  }<br><br>  Dog类称之为子类<br><br>  Animal类称为父类,基类（基础的类）</p>
-</blockquote>
+<li><p>2 获取元素<br><br>list.get(1);</p>
+</li>
+<li><p>3 获取索引<br></p>
 </li>
 </ul>
-<blockquote>
-<p>子类中就拥有了父类中所有的属性和方法, 但是构造器除外<br><br>    存在继承关系的时候，如果本类中没有的时候 就可以去父类中找</p>
-</blockquote>
-<pre><code>父类中private 修饰的属性和方法，子类 具有拥有权 而没有使用权 
-</code></pre><ul>
-<li><b>示例：</b> </li>
-<li><p>玉如意问题、动物问题</p>
-<pre><code>public class Extends {        
-    public static void main(String[] args) {
-
-        Son son = new Son();
-        System.out.println(&quot;传家宝是: &quot;+  son.heirloom);
-        son.skill();
-        son.business();
-    }
-}
-</code></pre></li>
-</ul>
-<pre><code>class Grandpa{
-    public String heirloom = &quot;玉如意&quot;;
-    public void skill()
-    {
-        System.out.println(&quot;打猎&quot;);
-    }
-}
-
-class Parent extends Grandpa{
-    public void business()
-    {
-        System.out.println(&quot;经商&quot;);
-    }
-}
-
-class Son extends Parent{
-}
-</code></pre><ul>
-<li><p><b>好处：</b></p>
-<blockquote>
-<p>避免了对多个类相同特征行为进行描述 <br><br>大大简化了代码，降低开发周期</p>
-</blockquote>
-</li>
-<li><p><b>Java继承特点：</b></p>
-</li>
-<li><b>1. java是单继承  可以多层继承  不可以多继承</b><br><br>  a、单继承    <br><pre><code>class  A extends B {}    
-</code></pre>  b、 多层继承    <br><pre><code>class B extends C{  }&lt;br /&gt;
- class  A extends B {}
-</code></pre></li>
-</ul>
+<p>list.indexOf();</p>
 <ul>
-<li><b>2. Object类 就java所有类的基类</b> </li>
+<li>4 移除元素 </li>
 </ul>
-<h2 id="重写-override"><a href="#重写-override" class="headerlink" title="重写(override)"></a>重写(override)</h2><ul>
-<li><p><b>什么时候使用覆盖操作?</b> </p>
-<blockquote>
-<p>当对一个类进行子类的扩展时，子类需要保留父类的功能声明，<br>但是要定义子类中该功能的特有内容时，就使用重写操作完成.</p>
-</blockquote>
-<pre><code>class Phone
-{
-    void call()
-    {}
-    void show()
-    {        
-        //只显示电话号码
-        System.out.println(&quot;number&quot;);
-    }
-}
-
-class NewPhone extends Phone
-{
-    void show()
-    {
-        //还可以显示这个人的照片和名字
-        System.out.println(&quot;name&quot;);
-        System.out.println(&quot;pic&quot;);
-        super.show();
-    }
-}
-</code></pre></li>
-</ul>
+<p>list.remove();</p>
+<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>HashMap是一种类似字典的键值对存储数值方式.</p>
+<p>常用方法:</p>
 <ul>
-<li><p><b>方法重写的原则</b> </p>
-<blockquote>
-<p>重写方法必须和父类中被重写方法具有相同的方法名称、输入参数和返回值类型。<br><br>重写方法不能使用比父类中被重写方法更严格的访问权限。<br><br>重写方法不能比父类中被重写方法抛出更多的异常<br></p>
-</blockquote>
+<li><p>添加方法:<br>map.put(“key”,”value”);</p>
 </li>
-<li><p><b>重载跟重写之间的区别 </b><br><img src="http://ww4.sinaimg.cn/large/005KqbSEgw1f4sjf6kkm1j30gb05u0tg.jpg" alt=""></p>
+<li><p>取值方法<br>map.get(“key”);</p>
 </li>
-</ul>
-<h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><pre><code>在子类构造对象时，发现，访问子类构造函数时，父类也运行了。
-为什么呢？
-原因是：在子类的构造函数中第一行有一个默认的隐式语句。 super();
-
-子类的实例化过程：子类中所有的构造函数默认都会访问父类中的空参数的构造函数。
-
-
-为什么子类实例化的时候要访问父类中的构造函数呢？
-那是因为子类继承了父类，获取到了父类中内容(属性)，所以在使用父类内容之前，
-要先看父类是如何对自己的内容进行初始化的。
-
-所以子类在构造对象时，必须访问父类中的构造函数。 
-为什么完成这个必须的动作，就在子类的构造函数中加入了super()语句。
-
-如果父类中没有定义空参数构造函数，那么子类的构造函数必须用super明确要调用
-父类中哪个构造函数。同时子类构造函数中如果使用this调用了本类构造函数时，
-那么super就没有了，因为super和this都只能定义第一行。所以只能有一个。
-但是可以保证的是，子类中肯定会有其他的构造函数访问父类的构造函数。
-
-
-注意：supre语句必须要定义在子类构造函数的第一行。因为父类的初始化动作要先完成。
-</code></pre><p><img src="http://ww3.sinaimg.cn/large/005KqbSEgw1f4sjfr2s3qj30g0038jrw.jpg" alt=""></p>
-<h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><ul>
-<li>final可以修饰类，方法，变量。</li>
-<li>final修饰的类不可以被继承。</li>
-<li>final修饰的方法不可以被覆盖。</li>
-<li>final修饰的变量是一个常量。只能被赋值一次。</li>
-<li>内部类只能访问被final修饰的局部变量。</li>
-</ul>
-<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><ul>
-<li><p><b>static的特点：</b> </p>
-<ol>
-<li>static是一个修饰符，用于修饰成员。</li>
-<li>static修饰的成员被所有的对象所共享。</li>
-<li>static优先于对象存在，因为static的成员随着类的加载就已经存在了。 </li>
-<li>static修饰的成员多了一种调用方式，就可以直接被类名所调用 。 类名.静态成员 。</li>
-<li>static修饰的数据是共享数据，对象中的存储的是特有数据。</li>
-</ol>
+<li><p>一处键值对<br>map.remove(“key”);</p>
 </li>
-<li><p><b>成员变量和静态变量的区别？</b></p>
-<p>   1.两个变量的生命周期不同。</p>
-<blockquote>
-<p>成员变量随着对象的创建而存在，随着对象的被回收而释放。<br><br>  静态变量随着类的加载而存在，随着类的消失而消失。</p>
-</blockquote>
-<p>   2.调用方式不同。</p>
-<blockquote>
-<p>成员变量只能被对象调用。<br><br>  静态变量可以被对象调用，还可以被类名调用。</p>
-</blockquote>
-<p>   3.别名不同。</p>
-<blockquote>
-<p>成员变量也称为实例变量。<br><br>  静态变量称为类变量。 </p>
-</blockquote>
-<p>  4.数据存储位置不同。</p>
-<blockquote>
-<p>成员变量数据存储在堆内存的对象中，所以也叫对象的特有数据.<br><br>  静态变量数据存储在方法区(共享数据区)的静态区，所以也叫对象的共享数据.</p>
-</blockquote>
+<li><p>判断一个key是否已经存在<br>map.containsKey(“key”);</p>
 </li>
-</ul>
-<ul>
-<li><p><b>静态使用的注意事项</b>：</p>
-<ol>
-<li>静态方法只能访问静态成员。(非静态既可以访问静态，又可以访问非静态)</li>
-<li>静态方法中不可以使用this或者super关键字。</li>
-<li>主函数是静态的。</li>
-</ol>
-</li>
-</ul>
-<p>##多态</p>
-<ul>
-<li><p>什么是多态？</p>
-<blockquote>
-<p>多态就是一种事物存在的多种形态。<br><br>举一个例子，例如H2O：在常温下为液态水，在100摄氏度以上为气态蒸汽，在0摄氏度下为固态冰。</p>
-</blockquote>
-</li>
-<li><p>多态性只的是<b>对象</b>的多态。</p>
-<pre><code>class 动物
-{}
-
-class 猫 extends 动物
-{}
-
-猫 x = new 猫();
-
-动物 x = new 猫(); //一个对象，两种形态。  
-猫这类事物即具备者猫的形态，又具备着动物的形态。
-这就是对象的多态性。 
-
-简单说：就是一个对象对应着不同类型.
-</code></pre></li>
-</ul>
-<p>*　<b>动物 x = new 猫(); //父类的引用 指向了子类的对象    </b>    </p>
-<ul>
-<li><p>多态的好处：<br>  提高了代码的扩展性和灵活性。</p>
-</li>
-<li><p>多态的前提：</p>
-<ol>
-<li>必须有关系，继承，实现。</li>
-<li>要有覆盖。</li>
-<li>父类或接口的引用指向子类对象</li>
-</ol>
+<li><p>判断一个value是否已经存在<br>map.containsValue(“value”);</p>
 </li>
 </ul>
 </span>
@@ -512,8 +364,8 @@ class 猫 extends 动物
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/12/JavaDay6/" rel="next" title="Android从自学到放弃06">
-                <i class="fa fa-chevron-left"></i> Android从自学到放弃06
+              <a href="/2016/06/15/JavaDay9/" rel="next" title="Android从自学到放弃09">
+                <i class="fa fa-chevron-left"></i> Android从自学到放弃09
               </a>
             
           </div>
@@ -533,10 +385,10 @@ class 猫 extends 动物
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/12/JavaDay7/"
-     data-title="Android从自学到放弃07"
+        <div class="ds-share flat" data-thread-key="2016/06/15/JavaDay8/"
+     data-title="Android从自学到放弃08"
      data-content=""
-     data-url="http://yoursite.com/2016/06/12/JavaDay7/">
+     data-url="http://yoursite.com/2016/06/15/JavaDay8/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -564,8 +416,8 @@ class 猫 extends 动物
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/12/JavaDay7/"
-           data-title="Android从自学到放弃07" data-url="http://yoursite.com/2016/06/12/JavaDay7/">
+      <div class="ds-thread" data-thread-key="2016/06/15/JavaDay8/"
+           data-title="Android从自学到放弃08" data-url="http://yoursite.com/2016/06/15/JavaDay8/">
       </div>
     
   </div>
@@ -592,10 +444,10 @@ class 猫 extends 动物
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table Of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -609,22 +461,22 @@ class 猫 extends 动物
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">Kategorien</span>
+              <span class="site-state-item-name">categories</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags/">
               <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">Tags</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -673,7 +525,7 @@ class 猫 extends 动物
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承-面向对象编程三大特征之二"><span class="nav-number">1.</span> <span class="nav-text">继承  面向对象编程三大特征之二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写-override"><span class="nav-number">2.</span> <span class="nav-text">重写(override)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super"><span class="nav-number">3.</span> <span class="nav-text">super</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final"><span class="nav-number">4.</span> <span class="nav-text">final</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static"><span class="nav-number">5.</span> <span class="nav-text">static</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#案例"><span class="nav-number">1.</span> <span class="nav-text">案例</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的概念"><span class="nav-number"></span> <span class="nav-text">数组的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的使用"><span class="nav-number"></span> <span class="nav-text">数组的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的创建"><span class="nav-number"></span> <span class="nav-text">数组的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的访问和修改"><span class="nav-number"></span> <span class="nav-text">数组的访问和修改</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#案例-1"><span class="nav-number">1.</span> <span class="nav-text">案例</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合框架"><span class="nav-number"></span> <span class="nav-text">集合框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection"><span class="nav-number"></span> <span class="nav-text">Collection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList"><span class="nav-number"></span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number"></span> <span class="nav-text">HashMap</span></a></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

@@ -49,30 +49,45 @@
 
 
 
-<meta name="description" content="回顾
-面向对象与面向过程
-对象和类
-包和引入">
+<meta name="description" content="主要内容： String StringBuffer Math 日期
+
+一、String类
+声明：
+String是字符串，一连串字符的序列，他是一个特殊的数据类型
+String类实例化有两种方式
+String a = &amp;quot;abc&amp;quot;;
+String a1 = &amp;quot;abc&amp;quot;;
+String a2 = new String(&amp;quot;abc&amp;quot;);
+以前在学基">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android从自学到放弃05">
-<meta property="og:url" content="http://yoursite.com/2016/06/12/JavaDay5/index.html">
+<meta property="og:title" content="Android从自学到放弃07">
+<meta property="og:url" content="http://yoursite.com/2016/06/14/day07常用类/index.html">
 <meta property="og:site_name" content="coder_qi">
-<meta property="og:description" content="回顾
-面向对象与面向过程
-对象和类
-包和引入">
-<meta property="og:image" content="http://i.imgur.com/9bh51C9.jpg">
-<meta property="og:image" content="http://i.imgur.com/JkN7ltY.jpg">
-<meta property="og:image" content="http://i.imgur.com/7jpEVJE.jpg">
-<meta property="og:image" content="http://i.imgur.com/SzIctUK.jpg">
-<meta property="og:updated_time" content="2016-06-12T08:52:56.000Z">
+<meta property="og:description" content="主要内容： String StringBuffer Math 日期
+
+一、String类
+声明：
+String是字符串，一连串字符的序列，他是一个特殊的数据类型
+String类实例化有两种方式
+String a = &amp;quot;abc&amp;quot;;
+String a1 = &amp;quot;abc&amp;quot;;
+String a2 = new String(&amp;quot;abc&amp;quot;);
+以前在学基">
+<meta property="og:image" content="http://yoursite.com/1.png">
+<meta property="og:updated_time" content="2016-06-15T09:44:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android从自学到放弃05">
-<meta name="twitter:description" content="回顾
-面向对象与面向过程
-对象和类
-包和引入">
-<meta name="twitter:image" content="http://i.imgur.com/9bh51C9.jpg">
+<meta name="twitter:title" content="Android从自学到放弃07">
+<meta name="twitter:description" content="主要内容： String StringBuffer Math 日期
+
+一、String类
+声明：
+String是字符串，一连串字符的序列，他是一个特殊的数据类型
+String类实例化有两种方式
+String a = &amp;quot;abc&amp;quot;;
+String a1 = &amp;quot;abc&amp;quot;;
+String a2 = new String(&amp;quot;abc&amp;quot;);
+以前在学基">
+<meta name="twitter:image" content="http://yoursite.com/1.png">
 
 
 
@@ -84,7 +99,7 @@
   };
 </script>
 
-  <title> Android从自学到放弃05 | coder_qi </title>
+  <title> Android从自学到放弃07 | coder_qi </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -142,7 +157,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -152,7 +167,7 @@
             
               <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -223,7 +238,7 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
             
             
               
-                Android从自学到放弃05
+                Android从自学到放弃07
               
             
           </h1>
@@ -231,15 +246,15 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
 
         <div class="post-meta">
           <span class="post-time">
-            Veröffentlicht am
-            <time itemprop="dateCreated" datetime="2016-06-12T11:43:56+08:00" content="2016-06-12">
-              2016-06-12
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-06-14T16:13:56+08:00" content="2016-06-14">
+              2016-06-14
             </time>
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; in
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/垫石铺路/" itemprop="url" rel="index">
@@ -258,8 +273,8 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/12/JavaDay5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/JavaDay5/" itemprop="commentsCount"></span>
+                <a href="/2016/06/14/day07常用类/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/14/day07常用类/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -278,213 +293,154 @@ _st('install','3WzMTDmaFs74M4QARQUu','2.0.0');
       
 
       
-        <span itemprop="articleBody"><ul>
-<li>回顾</li>
-<li>面向对象与面向过程</li>
-<li>对象和类</li>
-<li>包和引入</li>
-</ul>
-<a id="more"></a>
-<h2 id="面向对象与面向过程"><a href="#面向对象与面向过程" class="headerlink" title="面向对象与面向过程"></a>面向对象与面向过程</h2><ul>
-<li>面向对象  以事件为中心，分析解决事件的步骤，就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，实现的时候一个一个依次调用就可以了</li>
-<li>面向过程  以事物为中心，分析某问题需要参与的事物，它具有<b>封装性，继承性以及多态性</b>。</li>
-</ul>
+        <span itemprop="articleBody"><p>主要内容： String StringBuffer Math 日期</p>
 <hr>
-<p>案例：  把大象装进冰箱</p>
-<ul>
-<li>面向过程：  把冰箱门打开(open)  大象塞进去(put) 关上冰箱门(close)   </li>
-<li>面向对象：  冰箱（open  put  close） 大象 </li>
-<li><img src="http://i.imgur.com/9bh51C9.jpg" alt=""> </li>
+<h3 id="一、String类"><a href="#一、String类" class="headerlink" title="一、String类"></a>一、String类</h3><ul>
+<li><p>声明：</p>
+<pre><code>String是字符串，一连串字符的序列，他是一个特殊的数据类型
+String类实例化有两种方式
+String a = &quot;abc&quot;;
+String a1 = &quot;abc&quot;;
+String a2 = new String(&quot;abc&quot;);
+以前在学基本数据类型的时候我们判断两个数值是否相等用的是  == 号，现在咱学到字符
+串，他们之间值是否相等比较的话用.equals(); 那 == 用在两个字符串比较的时候，他比较的是内存地址，了解即可
+</code></pre></li>
+<li><p>两种方式区别：</p>
+<pre><code>  第一种：对象值存在常量池中只开辟一块内存空间,字符串内容可以自动入池,以供下次使用.
+a1和a2指向同一块内存地址 因为String用的最多，很特殊，因为对于String来讲使用直接赋值的
+方式会在字符串池中保存内容。如果之后在声明字符串的时候发现内容一样，则不会重新开辟空间，
+而是从内存池中取出数据继续使用。
+  第二种：这里创建了2个实例化对象,一个是String的匿名对象&quot;Hello&quot;,另一个是使用关键字new 
+实例化的String类对象.开辟两块堆内存空间,有一块将成为垃圾,并且不能自动入池,
+需要使用intern()手工入池.
+</code></pre></li>
+<li><p>使用</p>
+<p>  1、比较字符串方法 </p>
+<pre><code>boolean equals :将该字符串与指定对象比较,如果二者包含的字符序列相等,则返回true,否则返回false.
+eg:
+String str1 = &quot;iPhone&quot;;
+String str2 = &quot;Android&quot;;
+if (str1.equals(str2)) 
+{System.out.println(&quot;相同&quot;);
+} else 
+{System.out.println(&quot;不相同&quot;);
+}
+</code></pre></li>
 </ul>
-<hr>
-<h2 id="对象和类"><a href="#对象和类" class="headerlink" title="对象和类"></a>对象和类</h2><pre><code> 对象： 在面向对象的思想中 万事万物 都是对象,比如：张三、一个杯子、一只笔等等
-        为什么说这是一个杯子 这是一只笔？因为他们具备杯子或笔的特点
+<pre><code>    2、查找方法 
 
-          -----》对象 具有明确的属性和行为(方法)
+      int indexOf(int c):找出c字符在该字符串第一次出现的位置. 
+      int indexOf(int c, int start):找出c字符在该字符串中从start开始后第一次出现的位置.  
+      int indexOf(String str):找出str字符串在该字符串中第一次出现的位置. 
+      int indexOf(String str , int start): 找出str字符串在该字符串中从start开始后第一次出现的位置.  
+      计算长度:int length(): 返回当前字符串长度.
+      eg:
+        String outStr = &quot;I want to have an iPhone&quot;;
+        int index1 = outStr.indexOf(&apos;a&apos;);
+        int index2 = outStr.indexOf(&apos;a&apos;,4);
+    int index3 = outStr.indexOf(&quot;iPhone&quot;);
 
-         张三  李四   王五
- 年龄:  18     21     100     --------&gt;属性(名词)：附属于事物上的一些特征
- 性别:  女     男     其他
- 身高:  172   180     170
+    3、替换方法:
 
- 吃饭：   ....                ----------&gt;行为（动词或动名词）：事物具有的动作 --》可以做什么事情 
- 睡觉:   。。。
- 打豆豆:  。。。   
+    String replace(char oldChar , char newChar ):将字符串中的第一个oldChar替换成newChar.
+      判断开始或结束
+        boolean startWith(String prefix):该String对象是否以prefix开始.
+     boolean startWith(String prefix ,int toffset): 
+    该String对象从toffset位置算起,是否以prefix开始. 
+    boolean endWith(String prefix):该String对象是否以prefix结束.
+        eg.
+        String outStr = &quot;I want to have an iPhone&quot;;
+        str1 = str1.replace(&apos;P&apos;, &apos;s&apos;);
+        str1 = str1.replaceAll(&quot;iP&quot;, &quot;hhh&quot;);
 
-
-类： 就是对同一类对象的 属性和行为 的 抽象和总结 
-       对象是类的一个实例展现
-     张三  李四   王五              ----》人类 / 动物类
-     张三  李四   王五   小花猫   ----》动物类
-</code></pre><p><img src="http://i.imgur.com/JkN7ltY.jpg" alt=""></p>
-<h2 id="类的格式："><a href="#类的格式：" class="headerlink" title="类的格式："></a>类的格式：</h2><pre><code>类： [修饰符]  class  类名{   }
-属性：其实就是变量，所以也可以称为变量， 指的是全局变量(成员变量)---》类的内部 方法的外部
-       [修饰符]  数据类型 变量名称 [= 变量的值] ;
-
-行为：其实就是 方法  --- 其实也是通常所说的  功能
-       [修饰符]  返回值数据类型   方法名称( [参数类型  参数名称1, 参数类型  参数名称2,.....] )
-       {
-               //逻辑语句
-               [return 返回值] ;
+        // 判断是否已某某结尾
+        String str = &quot;icon.jpg&quot;;
+        if (str.endsWith(&quot;.jpg&quot;)) {
+        str = str.replace(&quot;.jpg&quot;, &quot;.png&quot;);
+        System.out.println(str);
         }
-</code></pre><blockquote>
-<p>案例：参考上述讲解，创建一个Person类里面含有响应的属性和方法。</p>
-</blockquote>
-<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><ul>
-<li>必须使用 new 关键字创建对象。</li>
-<li>Person person= new Person ();</li>
-</ul>
-<h3 id="使用对象-利用对象调用类中的属性和方法"><a href="#使用对象-利用对象调用类中的属性和方法" class="headerlink" title="使用对象      利用对象调用类中的属性和方法"></a>使用对象      <i>利用对象调用类中的属性和方法</i></h3><ul>
-<li>使用对象（引用） . 成员变量来引用对象的成员变量。</li>
-<li>person.age </li>
-<li>使用对象（引用） . 方法（参数列表）来调用对象的方法。</li>
-<li>person. setAge(23) </li>
-<li>同一类的每个对象有不同的成员变量存储空间。</li>
-<li><p>同一类的每个对象共享该类的方法。</p>
-<p>  public class Person {</p>
-<pre><code>private String name;
-private int age;
-private String sex;
-public String getName() {
-    return name;
-}
-public void setName(String name) {
-    this.name = name;
-}
-public int getAge() {
-    return age;
-}
-public void setAge(int age) {
-    this.age = age;
-}
-public String getSex() {
-    return sex;
-}
-public void setSex(String sex) {
-    this.sex = sex;
-}
-</code></pre><p>  }</p>
-</li>
-</ul>
-<h3 id="画内存"><a href="#画内存" class="headerlink" title="画内存"></a>画内存</h3><ul>
-<li><p><b>基本图</b><br><img src="http://i.imgur.com/7jpEVJE.jpg" alt=""></p>
-</li>
-<li><p><b>更改属性值得图</b><br><img src="http://i.imgur.com/SzIctUK.jpg" alt=""></p>
-</li>
-</ul>
-<h1 id="包和引入"><a href="#包和引入" class="headerlink" title="包和引入"></a>包和引入</h1><h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><ul>
-<li><p>做什么的？</p>
-<blockquote>
-<p>用来管理软件开发中大量的类 和 解决命名冲突问题</p>
-</blockquote>
-</li>
-<li><p>怎么写？</p>
-<blockquote>
-<p>包名：域名倒着写即可，再加上模块名。</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>其实内部实现就是靠目录结构来做到的。</p>
-<ul>
-<li>怎么用?<br>通常是类的第一句非注释性语句。</li>
-</ul>
-</blockquote>
-<h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h4><ol>
-<li>写项目时都要加包，不要使用默认包。</li>
-<li>包名要小写</li>
-<li>com.demo和com.demo.car，这两个包没有包含关系，是两个完全独立的包。只是逻辑上看起来后者是前者的一部分。</li>
-<li><p>增加package后的编译问题：</p>
-<pre><code>使用：javac  -d   .    Test.java  (会自动在当前目录下生成包对应的子目录)
-java  com.bjsxt.Test,   或者  java   com/bjsxt/Test
-</code></pre></li>
-<li>当一个类含有包名的时候 该类的完成名称 应该是包名.类名</li>
-</ol>
-<h3 id="JDK中的主要包"><a href="#JDK中的主要包" class="headerlink" title="JDK中的主要包"></a>JDK中的主要包</h3><pre><code>java.lang－包含一些Java语言的核心类，如String、Math、Integer、System和Thread，提供常用功能。
-java.awt－包含了构成抽象窗口工具集（abstract window toolkits）的多个类，这些类被用来构建和管理应用程序的图形用户界面(GUI)。
-java.net－包含执行与网络相关的操作的类。
-java.io－包含能提供多种输入/输出功能的类。
-java.util－包含一些实用工具类，如定义系统特性、使用与日期日历相关的函数。
-</code></pre><h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><ul>
-<li><p>为什么需要import?</p>
-<blockquote>
-<p>如果不适用import，我们如果用到其他包的类时，只能这么写：java.util.Date，代码量太大，不利于编写和维护。通过import可以导入其他包下面的类，从而可以在本类中直接通过类名来调用。</p>
-</blockquote>
-</li>
-<li><p>import怎么使用?</p>
-<pre><code>import  java.util.Date; 
-import  java.util.*;   //导入该包下所有的类。会降低编译速度，但不会降低运行速度。
-</code></pre></li>
-</ul>
-<h4 id="注意要点："><a href="#注意要点：" class="headerlink" title="注意要点："></a>注意要点：</h4><ol>
-<li>java会默认导入java.lang包下所有的类，因此这些类我们可以直接使用。</li>
-<li><p>如果导入两个同名的类，只能用包名+类名来显示调用相关类：</p>
-<pre><code>java.util.Date date  = new  java.util.Date();
-static  import 静态属性导入(JDK 1.5后增加, 了解！！！！)：
-</code></pre></li>
-<li><p>静态导入的作用：用于导入指定类的静态属性<br>如何使用：</p>
-<pre><code>import static java.lang.Math.*;//导入Math类的所有静态属性
-import static java.lang.Math.PI;//导入Math类的PI属性
-</code></pre></li>
-</ol>
-<p>然后，我们可以在程序中直接使用：System.out.println(PI);</p>
-<p>上面两种导入方式都是为了便于编写代码，提高可维护性。</p>
-<hr>
-<p>思考题：</p>
-<ul>
-<li>对象和类的关系是? </li>
-<li>定义自己的类：手机类（没有标准答案，按照自己的想法定义，一定看包含属性和方法）</li>
-<li>栈的特点是?存放什么内容?</li>
-<li>堆得特点是?存放什么内容?</li>
-<li>方法区的特点是?存放什么内容? </li>
-<li><p>画出如下程序的内存结构（课堂上的代码）：(有难度)</p>
-<pre><code>//测试类和对象
-public class TestObject{
-    public static void main(String[] args){
-        Car c1 = new Car();
-        c1.changeColor(&quot;红色&quot;);
-        c1.showColor();
-        System.out.println(Car.tyreNum);
-        System.out.println(c1.tyreNum);
+        //判读是否已某某开始
+        String number = &quot;13188866666&quot;;
+        if (number.startsWith(&quot;131&quot;)) {
+            int a = number.length();
+            System.out.println(a);
+        }
 
-        Car c2 = new Car();
-        Engine e = new Engine();
-        e.speed = 1000;
-        e.weight = 10;
-        c2.engine = e;
-        c2.color=&quot;黑色&quot;;
+    4、去除空格
+  String trim(): 去除字符串中的空格.
+  eg.
+ // 去空格 首尾
+String str = &quot; ab cd   &quot;;
+str = str.trim();
+</code></pre><p>###二、StringBuffer类<br>    使用 StringBuffer sb = new StringBuffer();<br>    StringBuffer对象代表一个字符可变的字符串,当一个StringBuffer被创建以后,<br>    通过StringBuffer提供的append(),insert(),substring()等方法可以改变这个字符串对象的字符序列.<br>    拼接方法:<br>    sb.append();<br>    eg.<br>    // 拼接字符串<br>    StringBuffer buffer = new StringBuffer();<br>    buffer.append(“Lanou”);<br>    buffer.append(“Dalian”);</p>
+<pre><code>截取方法：
+sb.subString();
+eg.
+// 截取
+String str = buffer.substring(5);// start
+System.out.println(str);String str2 = buffer.substring(2, 4);// 左闭右开，不包含右侧
+插入方法:
+sb.insert();
+buffer.insert(5, &quot;Me&quot;);
+删除方法:
+sb.delete();
+eg.
+buffer.delete(2, 5);// 左闭右开
+</code></pre><h2 id="三、包装类"><a href="#三、包装类" class="headerlink" title="三、包装类"></a>三、包装类</h2><pre><code>Java语言是一个面向对象的语言，但是Java中的基本数据类型却是不面向对象的，这在实际使用时存在
+很多的不便，为了解决这个不足，在设计类时为每个基本数据类型设计了一个对应的类进行代表，
+这样八个和基本数据类型对应的类统称为包装类(Wrapper Class)，有些地方也翻译为外覆类或数据类型类
+</code></pre><p> <img src="1.png" alt="1"></p>
+<pre><code>包装类的作用：
+提供：字符串、基本类型数据、对象之间互相转化的方式
+包含每种基本数据类型的相关属性，如最大值、最小值等。
+简单转化  
+为数字的字符串 &lt;----&gt; 数字        .
+String 类 &lt;-----&gt;  基本数据类型
+一个是类 一个是数据类型  不在一层次上
+这时候引出包装类  基本数据类型对应的包装类
+eg.
+String s = &quot;123&quot;;
+int i = Integer.parseInt(s);
+反过来
+int i = 123;
+Integer in = Integer.valueOf(i);或者 Integer in  = new Integer(i);
+String s = in.toString();
+</code></pre><p>​    </p>
+<p>###四、日期类<br>    Date类（该类现在很少用了）<br>    创建方法<br>    Date d = new Date();<br>    输出结果：Fri May 06 13:41:57 CST 2016 (这种形式，时间为测试时时间)</p>
+<pre><code>Calendar类 
+Calendar c = Calendar.getInstance();
+int year = c.get(Calendar.YEAR);
+int year = c.get(Calendar.YEAR);
+int month = c.get(Calendar.MONTH)+1;
+int day = c.get(Calendar.DAY_OF_MONTH);
+int week = c.get(Calendar.DAY_OF_WEEK);
+输出结果：2016年5月6日 星期5
 
-        c2.tyreNum = 10;
-        System.out.println(c1.tyreNum);
-    }
-}
+TomeZone类时区
+TomeZone t = TimeZone.getDefault();
+t.getID();
+T.getDispalyName();获取时区名字
 
-class Car {
-    static int tyreNum=4;
-    Engine engine;
-    String color;   //char sequence :字符序列
+日期格式化DateFormat抽象类
+用它的子类
+SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy年MM月dd日 HH：mm：ss&quot;);
+sdf.format(new Date());
+输出结果：
+</code></pre><p>###五、Math</p>
+<pre><code>Math类定义了多个实现标准数学函数功能的基本方法 如三角函数，开根号等运算
+Math类中所有的成员方法都是静态的，所以直接类名.方直接调用
+常用的一些方法：
+Math.round();四舍五入
+Math.max();取两个数的最大值
+Math.min();取两个数的最小值
+Math.abs()；去绝对值
+三角函数：
+sin(double a)  cos()等 a表示弧度，角度与弧度计算公式：2*PI/360 *角度
+pow(double a,double b):a的B次幂
 
-    void changeColor(String c){
-        color = c;
-    }
-
-    void showColor(){
-        System.out.println(&quot;我的颜色是：&quot;+color);
-    }
-}
-
-class Engine{
-    int speed;
-    int weight;
-}
-</code></pre></li>
-<li><p>package的两个作用是什么?</p>
-</li>
-<li>增加package以后，我们在DOS下编译怎么做?</li>
-<li>import是用于导入包还是导入类?</li>
-<li>import  java.util.*; 会不会降低程序运行速度?为什么?</li>
-</ul>
-</span>
+随机数：
+Math.random();一个[0.0~1.0]之间的数
+</code></pre></span>
       
     </div>
 
@@ -501,16 +457,16 @@ class Engine{
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/12/JavaDay4/" rel="next" title="Android从自学到放弃04">
-                <i class="fa fa-chevron-left"></i> Android从自学到放弃04
+              <a href="/2016/06/14/day06继承/" rel="next" title="Android从自学到放弃06">
+                <i class="fa fa-chevron-left"></i> Android从自学到放弃06
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/12/JavaDay6/" rel="prev" title="Android从自学到放弃06">
-                Android从自学到放弃06 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/15/JavaDay9/" rel="prev" title="Android从自学到放弃09">
+                Android从自学到放弃09 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -526,10 +482,10 @@ class Engine{
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/12/JavaDay5/"
-     data-title="Android从自学到放弃05"
+        <div class="ds-share flat" data-thread-key="2016/06/14/day07常用类/"
+     data-title="Android从自学到放弃07"
      data-content=""
-     data-url="http://yoursite.com/2016/06/12/JavaDay5/">
+     data-url="http://yoursite.com/2016/06/14/day07常用类/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -557,8 +513,8 @@ class Engine{
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/12/JavaDay5/"
-           data-title="Android从自学到放弃05" data-url="http://yoursite.com/2016/06/12/JavaDay5/">
+      <div class="ds-thread" data-thread-key="2016/06/14/day07常用类/"
+           data-title="Android从自学到放弃07" data-url="http://yoursite.com/2016/06/14/day07常用类/">
       </div>
     
   </div>
@@ -585,10 +541,10 @@ class Engine{
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table Of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -602,22 +558,22 @@ class Engine{
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">Kategorien</span>
+              <span class="site-state-item-name">categories</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags/">
               <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">Tags</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -666,7 +622,7 @@ class Engine{
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象与面向过程"><span class="nav-number">1.</span> <span class="nav-text">面向对象与面向过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象和类"><span class="nav-number">2.</span> <span class="nav-text">对象和类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的格式："><span class="nav-number">3.</span> <span class="nav-text">类的格式：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建对象"><span class="nav-number">3.1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用对象-利用对象调用类中的属性和方法"><span class="nav-number">3.2.</span> <span class="nav-text">使用对象      利用对象调用类中的属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#画内存"><span class="nav-number">3.3.</span> <span class="nav-text">画内存</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包和引入"><span class="nav-number"></span> <span class="nav-text">包和引入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Package"><span class="nav-number">1.</span> <span class="nav-text">Package</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意事项："><span class="nav-number">1.0.1.</span> <span class="nav-text">注意事项：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK中的主要包"><span class="nav-number">1.1.</span> <span class="nav-text">JDK中的主要包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#import"><span class="nav-number">2.</span> <span class="nav-text">import</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意要点："><span class="nav-number">2.0.1.</span> <span class="nav-text">注意要点：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、String类"><span class="nav-number">1.</span> <span class="nav-text">一、String类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、包装类"><span class="nav-number"></span> <span class="nav-text">三、包装类</span></a></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
